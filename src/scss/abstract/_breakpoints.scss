@@ -1,0 +1,26 @@
+/* em units are best for breakpoints, rem have bugs on safari. 05/10/2022 */
+$breakpoints: (
+  "small": 40em,
+  "medium": 52em,
+  "large": 64em,
+  "x-large": 80em,
+);
+
+/* 0.2px difference that way no visual bug and problems with breakpoints-up */
+$breakpoints-down: (
+  "small": 39.9988em,
+  "medium": 51.9988em,
+  "large": 63.9988em,
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

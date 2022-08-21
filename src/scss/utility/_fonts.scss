@@ -1,0 +1,35 @@
+@use "../abstract/" as *;
+@use "sass:string";
+
+@each $fs, $value in $font-sizes {
+  .fs-#{$fs} {
+    font-size: $value;
+  }
+}
+
+@each $fw, $value in $font-weights {
+  .fw-#{$fw} {
+    font-weight: $value;
+  }
+}
+
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+  line-height: var(--lh-300);
+  text-transform: uppercase;
+  font-weight: var(--fw-300);
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+  line-height: var(--lh-400);
+}
+
+.fs-body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-700);
+  text-align: center;
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+}

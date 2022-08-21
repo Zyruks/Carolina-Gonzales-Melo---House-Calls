@@ -1,0 +1,13 @@
+@use "../abstract" as *;
+
+body {
+  font-family: var(--ff-primary);
+}
+
+h1 {
+  font-family: var(--ff-headings);
+}
+
+p {
+  font-family: var(--ff-body);
+}
