@@ -1,0 +1,54 @@
+@use "../abstract/" as *;
+
+.hamburger {
+  display: inline-block;
+  margin: 0;
+  padding-block: rem(15);
+  padding-inline: rem(15);
+  border: 0;
+  overflow: visible;
+
+  color: inherit;
+  font: inherit;
+  text-transform: none;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+}
+
+.hamburger-box {
+  display: flex;
+  flex-direction: column;
+  gap: rem(6);
+  align-items: center;
+  justify-content: space-between;
+  inline-size: rem(40);
+
+  block-size: rem(40);
+}
+
+.line {
+  display: block;
+
+  border-radius: rem(20);
+
+  background-color: var(--clr-neutral-800);
+  inline-size: 100%;
+  block-size: rem(6);
+}
+
+.line-1 {
+  align-self: flex-start;
+
+  transform-origin: left center;
+}
+
+.line-3 {
+  align-self: flex-end;
+
+  transform-origin: center right;
+}

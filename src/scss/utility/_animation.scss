@@ -1,0 +1,137 @@
+@use "../abstract/" as *;
+/* burger menu animation  */
+@keyframes anima-line-1-open {
+  0% {
+    transform: rotate(0) translateX(0) translateY(0);
+
+    inline-size: 100%;
+  }
+
+  50% {
+    inline-size: 70%;
+    transform: rotate(0) translateX(0) translateY(0);
+  }
+
+  100% {
+    transform: rotate(45deg) translateX(-2px) translateY(-2.1px);
+  }
+}
+
+@keyframes anima-line-2-open {
+  0% {
+    transform: rotate(0) translateX(0) translateY(0);
+
+    inline-size: 100%;
+  }
+
+  50% {
+    transform: rotate(0) translateX(0) translateY(0);
+    inline-size: 100%;
+  }
+
+  100% {
+    transform: rotate(-45deg);
+
+    inline-size: 135%;
+  }
+}
+
+@keyframes anima-line-3-open {
+  0% {
+    transform: rotate(0) translateX(0) translateY(0);
+
+    inline-size: 100%;
+  }
+
+  50% {
+    transform: rotate(0) translateX(0) translateY(0);
+    inline-size: 70%;
+  }
+
+  100% {
+    transform: rotate(45deg) translateX(2px) translateY(2.1px);
+
+    inline-size: 70%;
+  }
+}
+
+@keyframes anima-line-1-close {
+  0% {
+    transform: rotate(45deg) translateX(-2px) translateY(-2.1px);
+
+    inline-size: 70%;
+  }
+
+  50% {
+    transform: rotate(0) translateX(0) translateY(0);
+  }
+
+  95% {
+    inline-size: 100%;
+  }
+
+  100% {
+    inline-size: 100%;
+  }
+}
+
+@keyframes anima-line-2-close {
+  0% {
+    transform: rotate(-45deg);
+
+    inline-size: 135%;
+  }
+
+  35% {
+    inline-size: 100%;
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes anima-line-3-close {
+  0% {
+    transform: rotate(45deg) translateX(2px) translateY(2.1px);
+
+    inline-size: 70%;
+  }
+
+  30% {
+    transform: rotate(0) translateX(0) translateY(0);
+  }
+
+  95% {
+    inline-size: 100%;
+  }
+
+  100% {
+    inline-size: 100%;
+  }
+}
+
+.line-1--open {
+  animation: anima-line-1-open 300ms forwards ease-in-out;
+}
+
+.line-2--open {
+  animation: anima-line-2-open 300ms forwards ease-in-out;
+}
+
+.line-3--open {
+  animation: anima-line-3-open 300ms forwards ease-in-out;
+}
+.line-1--close {
+  animation: anima-line-1-close 300ms ease-in-out forwards;
+}
+
+.line-2--close {
+  animation: anima-line-2-close 300ms ease-in-out forwards;
+}
+
+.line-3--close {
+  animation: anima-line-3-close 300ms ease-in-out forwards;
+}
+
+/* burger menu animation end */
