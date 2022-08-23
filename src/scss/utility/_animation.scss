@@ -13,7 +13,7 @@
   }
 
   100% {
-    transform: rotate(45deg) translateX(-2px) translateY(-2.1px);
+    transform: rotate(45deg) translateX(rem(-3.5)) translateY(rem(-4.7));
   }
 }
 
@@ -49,7 +49,7 @@
   }
 
   100% {
-    transform: rotate(45deg) translateX(2px) translateY(2.1px);
+    transform: rotate(45deg) translateX(rem(3.5)) translateY(rem(4.7));
 
     inline-size: 70%;
   }
@@ -57,7 +57,7 @@
 
 @keyframes anima-line-1-close {
   0% {
-    transform: rotate(45deg) translateX(-2px) translateY(-2.1px);
+    transform: rotate(45deg) translateX(rem(-3.5)) translateY(rem(-4.7));
 
     inline-size: 70%;
   }
@@ -93,7 +93,7 @@
 
 @keyframes anima-line-3-close {
   0% {
-    transform: rotate(45deg) translateX(2px) translateY(2.1px);
+    transform: rotate(45deg) translateX(rem(3.5)) translateY(rem(4.7));
 
     inline-size: 70%;
   }
@@ -135,3 +135,38 @@
 }
 
 /* burger menu animation end */
+
+/* navigation mobile */
+
+@keyframes anima-nav-open {
+  0% {
+    opacity: 0%;
+    transform: translateY(rem(-20));
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes anima-nav-close {
+  0% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0%;
+    transform: translateY(rem(-20));
+  }
+}
+
+.nav--open {
+  animation: anima-nav-open 300ms ease-in-out forwards;
+}
+
+.nav--close {
+  animation: anima-nav-close 300ms ease-in-out forwards;
+}
+/* navigation mobile end */

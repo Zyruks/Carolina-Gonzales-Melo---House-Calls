@@ -18,14 +18,19 @@
   transition-timing-function: linear;
   transition-duration: 0.15s;
   transition-property: opacity, filter;
+
+  @include breakpoint(large) {
+    display: none;
+  }
 }
 
 .hamburger-box {
   display: flex;
   flex-direction: column;
-  gap: rem(6);
+
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+
   inline-size: rem(40);
 
   block-size: rem(40);
@@ -38,7 +43,7 @@
 
   background-color: var(--clr-neutral-800);
   inline-size: 100%;
-  block-size: rem(6);
+  block-size: rem(5);
 }
 
 .line-1 {

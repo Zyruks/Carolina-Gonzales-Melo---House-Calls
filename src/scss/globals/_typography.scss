@@ -11,3 +11,31 @@ h1 {
 p {
   font-family: var(--ff-body);
 }
+
+/***************** 
+ header typography 
+*****************/
+
+.nav__item {
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-nav);
+  font-size: var(--fs-nav);
+  text-transform: capitalize;
+
+  @include breakpoint(large) {
+    color: var(--clr-neutral-900);
+  }
+}
+
+.nav__btn {
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-550);
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: var(--fs-500);
+  }
+}
+
+/********************** 
+ header typography end
+**********************/

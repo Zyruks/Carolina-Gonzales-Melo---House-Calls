@@ -1,0 +1,35 @@
+@use "../abstract/" as *;
+
+.hover-state {
+  &::after {
+    position: absolute;
+
+    opacity: 0%;
+
+    transition: opacity 400ms ease-in-out, inline-size 400ms ease-in-out;
+
+    content: "";
+    inset-block-end: rem(-8);
+    inset-inline-start: 15%;
+    inline-size: 0%;
+    border-block-end: rem(2) solid var(--clr-neutral-100);
+
+    @include breakpoint(large) {
+      inset-inline: 23%;
+      border-block-end: rem(2) solid var(--clr-neutral-900);
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::after {
+      inline-size: 70%;
+
+      opacity: 100%;
+
+      @include breakpoint(large) {
+        inline-size: 50%;
+      }
+    }
+  }
+}

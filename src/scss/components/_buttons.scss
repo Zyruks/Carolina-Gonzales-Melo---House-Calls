@@ -1,1 +1,36 @@
 @use "../abstract/" as *;
+
+/***************** 
+ #buttons components 
+*****************/
+
+.btn {
+  border: rem(2) solid rgba(0, 0, 0, 0%);
+  border-radius: rem(10);
+  padding-block: rem(5);
+  padding-inline: rem(20);
+}
+
+.nav__btn {
+  background-color: hsl(0deg, 100%, 40%);
+
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+
+  &:hover {
+    border: rem(1) solid hsl(0deg, 100%, 40%, 0%);
+
+    color: hsl(0deg, 100%, 40%);
+
+    background-color: var(--clr-neutral-100);
+  }
+
+  @include breakpoint(large) {
+    &:hover {
+      border: rem(2) solid hsl(0deg, 100%, 40%);
+    }
+  }
+}
+
+/**********************
+ buttons components end 
+***********************/
