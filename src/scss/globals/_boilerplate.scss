@@ -1,5 +1,11 @@
 @use "../abstract" as *;
 
-a {
+a,
+a:visited,
+a:active {
   text-decoration: none;
+}
+
+img {
+  inline-size: 100%;
 }

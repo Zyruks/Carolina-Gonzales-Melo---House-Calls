@@ -13,15 +13,13 @@
 
   justify-content: space-between;
 
-  padding-inline: rem(16);
   block-size: rem(70);
-  @include breakpoint(large) {
-    padding-inline: 0;
-  }
 }
 
 .nav {
   position: absolute;
+  z-index: 2;
+  margin-inline: rem(16);
 
   display: none;
   flex-direction: column;
@@ -33,7 +31,7 @@
   background-color: var(--clr-primary-800);
 
   padding-block: rem(50);
-  margin-inline: rem(16);
+
   inset-block-start: rem(100);
   inset-inline: 0;
 
@@ -53,4 +51,9 @@
 
 .nav__item {
   position: relative;
+}
+
+.logo {
+  inline-size: rem(70);
+  block-size: 100%;
 }
