@@ -43,9 +43,11 @@
     --lh-#{$height}: #{$value};
   }
 
-  --fs-body: var(--fs-500);
+  --fs-body: var(--fs-400);
   --fs-primary-heading: var(--fs-750);
   --fs-secondary-heading: var(--fs-700);
+  --fs-third-heading: var(--fs-700);
+
   --fs-nav: var(--fs-600);
   --fw-nav: var(--fw-700);
   --fs-button: var(--fs-300);
@@ -53,7 +55,7 @@
 
 @include breakpoint(medium) {
   :root {
-    --fs-body: var(--fs-500);
+    --fs-body: var(--fs-450);
     --fs-primary-heading: clamp(var(--fs-700), 4.15vw, var(--fs-800));
     --fs-secondary-heading: var(--fs-800);
     --fs-nav: var(--fs-450);

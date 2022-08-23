@@ -23,6 +23,15 @@
   line-height: var(--lh-400);
 }
 
+.fs-third-heading {
+  font-size: var(--fs-third-heading);
+  text-align: center;
+
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+}
+
 .fs-body {
   font-size: var(--fs-body);
   line-height: var(--lh-500);

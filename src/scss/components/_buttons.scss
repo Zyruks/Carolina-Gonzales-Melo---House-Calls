@@ -49,6 +49,11 @@
   }
 }
 
+/* size for content-info section buttons */
+.item-child .btn {
+  inline-size: 60%;
+}
+
 .btn--inverted {
   border-color: var(--clr-primary-800);
 
@@ -63,8 +68,28 @@
   }
 }
 
+.btn--inverted-white {
+  position: relative;
+  z-index: 3;
+
+  border: rem(1) solid var(--clr-neutral-100);
+
+  background-color: rgba(0, 0, 0, 0%);
+
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+  inline-size: 50%;
+
+  &:hover {
+    border: rem(1) solid hsl(0deg, 100%, 40%, 0%);
+
+    color: var(--clr-primary-800);
+
+    background-color: var(--clr-neutral-100);
+  }
+}
+
 .btn--emergency {
-  border: rem(1) solid hsl(0deg, 100%, 40%);
+  border: rem(2) solid hsl(0deg, 100%, 40%);
 
   background-color: hsl(0deg, 100%, 40%);
 
@@ -72,7 +97,7 @@
   inline-size: 60%;
 
   &:hover {
-    border: rem(1) solid hsl(0deg, 100%, 40%, 0%);
+    border: rem(2) solid hsl(0deg, 100%, 40%, 0%);
 
     color: hsl(0deg, 100%, 40%);
 
