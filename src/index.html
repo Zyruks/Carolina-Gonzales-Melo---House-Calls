@@ -44,10 +44,11 @@
     <!-- favicon responsive end-->
 
     <!-- google stuff -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -63,17 +64,22 @@
   </head>
 
   <body>
+    <!-- #header section -->
     <header class="header">
       <div class="container">
-        <img src="./assets/svg/sonography.svg" alt="logo" />
+        <img src="./assets/svg/sonography.svg" alt="logo" class="logo" />
+        <!-- #primary nav menu -->
 
         <nav class="nav js-nav">
           <a href="#" class="nav__item hover-state">service</a>
           <a href="#" class="nav__item hover-state">plans</a>
           <a href="#" class="nav__item hover-state">about</a>
           <a href="#" class="nav__item hover-state">contact</a>
-          <button class="nav__item btn nav__btn">emergency</button>
+          <button class="nav__item btn btn--emergency">emergency</button>
         </nav>
+        <!-- #primary nav menu end-->
+
+        <!-- #burger menu icon-->
         <button class="hamburger js-hamburger" type="button">
           <span class="hamburger-box">
             <span class="line line-1 js-line"></span>
@@ -81,8 +87,56 @@
             <span class="line line-3 js-line"></span>
           </span>
         </button>
+        <!-- #burger menu icon end-->
       </div>
     </header>
+    <!-- #header section end -->
+
+    <!-- main  -->
+    <main class="margin-block-600">
+      <div class="container">
+        <section class="hero margin-inline-400">
+          <div class="even-columns">
+            <div>
+              <h1
+                class="fs-primary-heading fw-700 text-primary-700 margin-block-start-300 margin-block-end-100"
+              >
+                Fast and reliable medic at your service
+              </h1>
+              <p
+                class="fs-body text-neutral-600 fw-300 margin-block-start-100 margin-block-end-500"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                eum repellendus neque laborum, quaerat non provident veritatis
+                accusamus.
+              </p>
+              <div class="hero__btn-container">
+                <button class="btn js-hero-btn | fs-500 fw-400">
+                  <img
+                    src="./assets/svg/phone.svg"
+                    alt="phone illustration"
+                    class="btn__icon"
+                  />
+                  <a href="tel:+18294261492" class="text-neutral-100"
+                    >CALL US!</a
+                  >
+                </button>
+                <button class="btn btn--inverted | fs-500 fw-400">
+                  SERVICES
+                </button>
+              </div>
+            </div>
+            <div class="hero__img">
+              <img
+                src="./assets/svg/hero.svg"
+                alt="Illustration Blonde Woman"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- main end -->
 
     <script src="./scripts/script.js"></script>
   </body>
