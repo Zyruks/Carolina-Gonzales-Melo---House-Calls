@@ -5,16 +5,71 @@
 *****************/
 
 .btn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
   border: rem(2) solid rgba(0, 0, 0, 0%);
   border-radius: rem(10);
+
+  color: var(--clr-neutral-100);
+
+  background-color: var(--clr-primary-800);
+  cursor: pointer;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 400ms;
+
+  transition-property: color background-color;
   padding-block: rem(5);
   padding-inline: rem(20);
+  min-block-size: rem(45);
+
+  &:hover {
+    border: rem(2) solid var(--clr-primary-800);
+
+    background-color: var(--clr-neutral-100);
+  }
+
+  &:nth-child(1) {
+    justify-content: space-between;
+    @include breakpoint(medium) {
+      gap: rem(18);
+      justify-content: center;
+    }
+  }
 }
 
-.nav__btn {
+.btn__icon {
+  inline-size: rem(18);
+
+  @include breakpoint(large) {
+    inline-size: rem(24);
+  }
+}
+
+.btn--inverted {
+  border-color: var(--clr-primary-800);
+
+  color: var(--clr-primary-800);
+
+  background-color: rgba(0, 0, 0, 0%);
+
+  &:hover {
+    color: var(--clr-neutral-100);
+
+    background-color: var(--clr-primary-800);
+  }
+}
+
+.btn--emergency {
+  border: rem(1) solid hsl(0deg, 100%, 40%);
+
   background-color: hsl(0deg, 100%, 40%);
 
   transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+  inline-size: 60%;
 
   &:hover {
     border: rem(1) solid hsl(0deg, 100%, 40%, 0%);
