@@ -6,11 +6,13 @@ $font-sizes: (
   "200": em(8),
   "300": em(12),
   "400": em(16),
-  "500": em(32),
-  "600": em(48),
-  "700": em(64),
-  "800": em(80),
-  "900": em(96),
+  "450": em(20),
+  "500": em(24),
+  "550": em(30),
+  "600": em(36),
+  "700": em(48),
+  "800": em(64),
+  "900": em(80),
 );
 
 $font-weights: (
@@ -26,8 +28,8 @@ $font-weights: (
 );
 
 $font-families: (
-  "primary": "Lato" sans-serif,
-  "secondary": sans-serif,
+  "primary": "Lato",
+  "secondary": "Lato",
   "body": var(--ff-primary),
   "headings": var(--ff-primary),
 );
