@@ -1,12 +1,20 @@
 @use "../abstract/" as *;
 
+.hero {
+  max-inline-size: rem(1200);
+
+  align-self: center;
+  justify-self: center;
+}
+
 .hero__btn-container {
   display: flex;
   gap: rem(24);
   align-items: center;
+
   justify-content: space-between;
 }
 
 .hero__img {
-  inline-size: 120%;
+  inline-size: 100%;
 }

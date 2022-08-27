@@ -36,3 +36,11 @@
   font-size: var(--fs-body);
   line-height: var(--lh-500);
 }
+
+.btn-font-hover {
+  font-size: var(--fs-350);
+
+  @include breakpoint(large) {
+    font-size: var(--fs-400);
+  }
+}

@@ -72,6 +72,8 @@
   position: relative;
   z-index: 3;
 
+  min-inline-size: rem(180);
+
   border: rem(1) solid var(--clr-neutral-100);
 
   background-color: rgba(0, 0, 0, 0%);

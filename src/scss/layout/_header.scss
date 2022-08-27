@@ -1,8 +1,6 @@
 @use "../abstract/" as *;
 
 .header {
-  block-size: rem(50);
-
   inline-size: 100vw;
   margin-block-start: rem(24);
 }
@@ -12,8 +10,11 @@
   inline-size: 100%;
 
   justify-content: space-between;
-
+  padding-inline: rem(16);
   block-size: rem(70);
+  max-inline-size: rem(1200);
+  margin-block: 0;
+  margin-inline: auto;
 }
 
 .nav {

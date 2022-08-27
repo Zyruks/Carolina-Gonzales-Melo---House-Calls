@@ -1,7 +1,7 @@
 const heroBtn = document.querySelector(".js-hero-btn");
 
 heroBtn.addEventListener("mouseenter", () => {
-  heroBtn.innerHTML = `<a href="tel:+18294261492" class=" fs-400 text-primary-700" >+1 (829) 426-1492</a>`;
+  heroBtn.innerHTML = `<a href="tel:+18294261492" class=" btn-font-hover text-primary-700" >829 426-1492</a>`;
 });
 
 heroBtn.addEventListener("mouseleave", () => {
