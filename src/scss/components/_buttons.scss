@@ -6,10 +6,11 @@
 
 .btn {
   display: flex;
+  gap: rem(15);
 
   align-items: center;
   justify-content: center;
-  inline-size: 100%;
+  min-inline-size: rem(180);
   border: rem(2) solid rgba(0, 0, 0, 0%);
   border-radius: rem(10);
 
@@ -31,9 +32,12 @@
 
     background-color: var(--clr-neutral-100);
   }
+  @include breakpoint(medium) {
+    inline-size: 100%;
+  }
 
   &:nth-child(1) {
-    justify-content: space-between;
+    justify-content: center;
     @include breakpoint(medium) {
       gap: rem(18);
       justify-content: center;
@@ -93,6 +97,8 @@
 .btn--emergency {
   border: rem(2) solid hsl(0deg, 100%, 40%);
 
+  font-size: var(--fs-500);
+
   background-color: hsl(0deg, 100%, 40%);
 
   transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
@@ -110,6 +116,9 @@
     &:hover {
       border: rem(2) solid hsl(0deg, 100%, 40%);
     }
+  }
+  @include breakpoint(large) {
+    font-size: var(--fs-200);
   }
 }
 

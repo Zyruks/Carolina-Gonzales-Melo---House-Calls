@@ -11,16 +11,9 @@
     }
   }
 
-  /* fills */
-  @each $fill, $shades in $colors {
-    @each $shade, $value in $shades {
-      --fill-#{$fill}-#{$shade}: #{$value};
-    }
-  }
-
   /* font family */
   @each $font-family, $value in $font-families {
-    --ff-#{$font-family}: #{$value}, sans-serif;
+    --ff-#{$font-family}: #{$value}, serif;
   }
 
   /* font sizes */
@@ -38,26 +31,25 @@
     --size-#{$size}: #{$value};
   }
 
-  /* line heights*/
+  /* line heights */
   @each $height, $value in $line-heights {
     --lh-#{$height}: #{$value};
   }
 
+  --primary-heading: var(--fs-900);
+  --secondary-heading: var(--fs-700);
+  --third-heading: var(--fs-700);
+
   --fs-body: var(--fs-400);
-  --fs-primary-heading: var(--fs-750);
-  --fs-secondary-heading: var(--fs-700);
-  --fs-third-heading: var(--fs-700);
-
-  --fs-nav: var(--fs-600);
-  --fw-nav: var(--fw-700);
-  --fs-button: var(--fs-300);
-}
-
-@include breakpoint(medium) {
-  :root {
-    --fs-body: var(--fs-450);
-    --fs-primary-heading: clamp(var(--fs-700), 4.15vw, var(--fs-800));
-    --fs-secondary-heading: var(--fs-800);
-    --fs-nav: var(--fs-450);
+  --fs-nav: var(--fs-700);
+  --fs-btn: var(--fs-500);
+  @include breakpoint(medium) {
+    --primary-heading: var(--fs-800);
+    --fs-btn: var(--fs-300);
+    --fs-body: var(--fs-200);
+  }
+  @include breakpoint(large) {
+    --third-heading: var(--fs-600);
+    --fs-nav: var(--fs-200);
   }
 }

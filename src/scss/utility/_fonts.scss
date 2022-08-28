@@ -13,34 +13,40 @@
   }
 }
 
-.fs-primary-heading {
-  font-size: var(--fs-primary-heading);
-  line-height: var(--lh-300);
-}
-
-.fs-secondary-heading {
-  font-size: var(--fs-secondary-heading);
-  line-height: var(--lh-400);
-}
-
-.fs-third-heading {
-  font-size: var(--fs-third-heading);
-  text-align: center;
-
-  @include breakpoint(medium) {
-    text-align: left;
+@each $align in $text-align {
+  .text-align-#{$align} {
+    text-align: #{$align};
   }
+}
+
+@each $height, $value in $line-heights {
+  .lh-#{$height} {
+    line-height: $value;
+  }
+}
+
+.primary-heading {
+  font-size: var(--primary-heading);
+  line-height: var(--lh-400);
+  font-weight: var(--fw-700);
+}
+
+.secondary-heading {
+  font-size: var(--secondary-heading);
+  line-height: var(--lh-500);
+  font-weight: var(--fw-700);
+}
+
+.third-heading {
+  font-size: var(--third-heading);
+  line-height: var(--lh-400);
+  font-weight: var(--fw-700);
 }
 
 .fs-body {
   font-size: var(--fs-body);
-  line-height: var(--lh-500);
 }
 
-.btn-font-hover {
-  font-size: var(--fs-350);
-
-  @include breakpoint(large) {
-    font-size: var(--fs-400);
-  }
+.fs-btn {
+  font-size: var(--fs-btn);
 }

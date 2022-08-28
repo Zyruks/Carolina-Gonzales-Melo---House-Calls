@@ -75,7 +75,9 @@
           <a href="#" class="nav__item hover-state">plans</a>
           <a href="#" class="nav__item hover-state">about</a>
           <a href="#" class="nav__item hover-state">contact</a>
-          <button class="nav__item btn btn--emergency">emergency</button>
+          <button class="nav__item btn btn--emergency | fw-700">
+            emergency
+          </button>
         </nav>
         <!-- #primary nav menu end-->
 
@@ -94,23 +96,21 @@
 
     <!-- main  -->
     <main class="margin-block-600">
-      <section class="hero | margin-inline-400">
+      <section class="hero">
         <div class="even-columns">
           <div>
-            <h1
-              class="fs-primary-heading fw-700 text-primary-700 margin-block-start-300 margin-block-end-100"
-            >
+            <h1 class="primary-heading text-primary-700 margin-block-300">
               Fast and reliable medic at your service
             </h1>
             <p
-              class="fs-body text-neutral-600 fw-300 margin-block-start-100 margin-block-end-500"
+              class="fs-450 text-neutral-600 lh-500 margin-block-start-100 margin-block-end-500"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eum
               repellendus neque laborum, quaerat non provident veritatis
               accusamus.
             </p>
             <div class="hero__btn-container">
-              <button class="btn js-hero-btn | fs-500 fw-400">
+              <button class="btn js-hero-btn | fs-btn fw-400">
                 <img
                   src="./assets/svg/phone.svg"
                   alt="phone illustration"
@@ -118,7 +118,7 @@
                 />
                 <a href="tel:+18294261492" class="text-neutral-100">CALL US!</a>
               </button>
-              <button class="btn btn--inverted | fs-500 fw-400">
+              <button class="btn btn--inverted | fs-btn fw-400">
                 SERVICES
               </button>
             </div>
@@ -134,16 +134,18 @@
         <div class="content-info__item">
           <div class="container even-columns" data-children="first-child">
             <div class="item-child">
-              <h3 class="fs-third-heading fw-700 text-neutral-100">
+              <h3 class="third-heading fw-700 text-neutral-100">
                 No more waiting
               </h3>
-              <p class="fs-body fw-400 text-neutral-100 padding-block-400">
+              <p
+                class="fs-body fw-400 lh-500 text-neutral-100 padding-block-400"
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 eleifend suscipit elementum. Curabitur ut purus in risus
                 fermentum sollicitudin.
               </p>
               <button
-                class="btn btn--inverted-white | fs-450 fw-700 margin-block-start-400"
+                class="btn btn--inverted-white | fs-btn fw-700 margin-block-start-400"
               >
                 Learn More
               </button>
@@ -163,16 +165,18 @@
         <div class="content-info__item">
           <div class="container even-columns" data-children="second-child">
             <div class="item-child">
-              <h3 class="fs-third-heading fw-700 text-primary-800">
+              <h3 class="third-heading fw-700 text-primary-800">
                 Don’t wait, we go to your place
               </h3>
-              <p class="fs-body fw-400 text-neutral-600 padding-block-400">
+              <p
+                class="fs-body lh-500 fw-400 text-neutral-600 padding-block-400"
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 eleifend suscipit elementum. Curabitur ut purus in risus
                 fermentum sollicitudin.
               </p>
               <button
-                class="btn btn--inverted | fs-450 fw-700 margin-block-start-400"
+                class="btn btn--inverted | fs-btn fw-700 margin-block-start-400"
               >
                 Learn More
               </button>
@@ -194,16 +198,14 @@
         <div class="content-info__item">
           <div class="container even-columns" data-children="third-child">
             <div class="item-child">
-              <h3 class="fs-third-heading fw-700 text-neutral-100">
-                We do care
-              </h3>
+              <h3 class="third-heading fw-700 text-neutral-100">We do care</h3>
               <p class="fs-body fw-400 text-neutral-100 padding-block-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 eleifend suscipit elementum. Curabitur ut purus in risus
                 fermentum sollicitudin. Donec quis mattis nulla
               </p>
               <button
-                class="btn btn--inverted-white | fs-450 fw-700 margin-block-start-400"
+                class="btn btn--inverted-white | fs-btn fw-700 margin-block-start-400"
               >
                 Learn More
               </button>
@@ -219,6 +221,41 @@
           </div>
         </div>
         <!-- #content-info third child end -->
+      </section>
+      <section class="services">
+        <div class="container grid-service">
+          <!-- <h2 class="fs-secondary-heading text-primary-800 fw-700">services</h2> -->
+          <div class="grid-service__item">
+            <img src="./assets/svg/498-ambulance.svg" alt="Ambulance" />
+            <p class="fs-400 fw-400 text-neutral-900">
+              Evaluation Exam & Diagnosis
+            </p>
+          </div>
+          <div class="grid-service__item">
+            <img src="./assets/svg/498-ambulance.svg" alt="Ambulance" />
+            <p class="fs-400 fw-400 text-neutral-900">
+              Evaluation Exam & Diagnosis
+            </p>
+          </div>
+          <div class="grid-service__item">
+            <img src="./assets/svg/498-ambulance.svg" alt="Ambulance" />
+            <p class="fs-400 fw-400 text-neutral-900">
+              Evaluation Exam & Diagnosis
+            </p>
+          </div>
+          <div class="grid-service__item">
+            <img src="./assets/svg/498-ambulance.svg" alt="Ambulance" />
+            <p class="fs-400 fw-400 text-neutral-900">
+              Evaluation Exam & Diagnosis
+            </p>
+          </div>
+          <div class="grid-service__item">
+            <img src="./assets/svg/498-ambulance.svg" alt="Ambulance" />
+            <p class="fs-400 fw-400 text-neutral-900">
+              Evaluation Exam & Diagnosis
+            </p>
+          </div>
+        </div>
       </section>
     </main>
     <!-- main end -->
