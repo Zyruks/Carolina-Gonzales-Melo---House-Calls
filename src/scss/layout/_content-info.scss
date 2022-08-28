@@ -2,8 +2,8 @@
 
 .content-info {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: rem(30);
+  grid-template-rows: 1fr 0.7fr 0.7fr;
+
   align-items: center;
   overflow: hidden;
 }
@@ -28,9 +28,12 @@
   }
 
   &[data-children="third-child"] {
-    gap: 0;
+    gap: rem(30);
     margin-block: rem(40);
     block-size: rem(800);
+    @include breakpoint(medium) {
+      gap: rem(0);
+    }
     @include breakpoint(large) {
       block-size: rem(950);
     }
