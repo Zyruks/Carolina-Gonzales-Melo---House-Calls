@@ -37,7 +37,7 @@
   }
 
   --primary-heading: var(--fs-900);
-  --secondary-heading: var(--fs-700);
+  --secondary-heading: var(--fs-800);
   --third-heading: var(--fs-700);
 
   --fs-body: var(--fs-400);
@@ -45,6 +45,7 @@
   --fs-btn: var(--fs-500);
   @include breakpoint(medium) {
     --primary-heading: var(--fs-800);
+    --secondary-heading: var(--fs-700);
     --fs-btn: var(--fs-300);
     --fs-body: var(--fs-200);
   }

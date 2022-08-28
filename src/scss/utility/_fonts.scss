@@ -50,3 +50,12 @@
 .fs-btn {
   font-size: var(--fs-btn);
 }
+
+.fs-additional-service-title {
+  font-size: var(--fs-700);
+  letter-spacing: rem(2);
+  text-transform: capitalize;
+  @include breakpoint(medium) {
+    font-size: var(--fs-600);
+  }
+}
