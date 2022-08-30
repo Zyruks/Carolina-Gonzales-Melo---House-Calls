@@ -1,0 +1,170 @@
+@use "../abstract" as *;
+
+.plans {
+  flex-direction: column;
+
+  max-inline-size: rem(1200);
+
+  margin-inline: auto;
+
+  h2 {
+    margin-inline-start: rem(20);
+    margin-block-end: rem(100);
+    padding-block-end: rem(20);
+
+    text-align: flex-start;
+    text-transform: uppercase;
+
+    border-block-end: rem(3) dashed var(--clr-primary-300);
+  }
+}
+
+.plans-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
+  align-items: center;
+
+  justify-items: center;
+
+  column-gap: var(--size-400);
+  margin-inline: rem(16);
+  max-inline-size: rem(1200);
+  row-gap: rem(100);
+}
+
+.card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  min-inline-size: rem(320);
+  max-inline-size: rem(410);
+  border-radius: rem(8);
+
+  box-shadow: 0 0 rem(0.4) rgba(0, 0, 0, 3.4%), 0 0 rem(0.9) rgba(0, 0, 0, 4.8%),
+    0 0 rem(1.6) rgba(0, 0, 0, 6%), 0 0 rem(2.9) rgba(0, 0, 0, 7.2%),
+    0 0 rem(5.4) rgba(0, 0, 0, 8.6%), 0 0 rem(13) rgba(0, 0, 0, 12%);
+  padding-block: rem(60);
+
+  row-gap: rem(40);
+
+  @include breakpoint(medium) {
+    &:last-child {
+      grid-column: 1 / 3;
+    }
+  }
+
+  @include breakpoint(large) {
+    &:last-child {
+      grid-column: auto;
+    }
+  }
+
+  &::after {
+    inline-size: 90%;
+    margin-inline: auto;
+
+    content: "";
+    border-block-end: rem(2) solid var(--clr-primary-800);
+  }
+
+  &:nth-child(2) {
+    &::after {
+      border-color: var(--clr-neutral-100);
+    }
+  }
+}
+
+.card__title {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  font-size: rem(32);
+
+  & span {
+    font-size: rem(18);
+  }
+}
+
+.card__price {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  align-items: center;
+  justify-items: center;
+
+  & h3 {
+    font-size: rem(64);
+  }
+
+  & span:nth-child(1) {
+    align-self: flex-start;
+    justify-self: flex-end;
+
+    font-size: rem(24);
+  }
+
+  & span:nth-child(3) {
+    align-self: flex-end;
+    justify-self: flex-start;
+
+    font-size: rem(16);
+  }
+
+  & span:nth-child(4) {
+    grid-column: 2/3;
+
+    font-size: rem(16);
+  }
+}
+
+.card__list {
+  font-size: rem(20);
+  padding-inline-start: rem(30);
+
+  list-style: none;
+
+  & > li {
+    margin-block-start: rem(18);
+
+    &:first-child {
+      margin-block-end: rem(34);
+
+      font-weight: 700;
+    }
+  }
+}
+
+.card__sub-list {
+  padding-inline-start: rem(34);
+
+  list-style: disc;
+
+  & li {
+    margin-block-start: rem(8);
+  }
+}
+
+.best-deal {
+  &::before {
+    position: absolute;
+
+    border-radius: rem(8);
+
+    font-weight: 700;
+    font-size: rem(32);
+    letter-spacing: rem(3);
+    text-align: center;
+    text-transform: uppercase;
+
+    background-color: var(--clr-primary-800);
+
+    content: "BEST DEAL";
+    padding-block: rem(12);
+    margin-inline: auto;
+    inset-block-start: rem(-40);
+    inline-size: 80%;
+    inset-inline: 0;
+  }
+}
