@@ -1,0 +1,124 @@
+@use "../abstract" as *;
+
+.review .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(32);
+  align-items: center;
+  justify-items: center;
+  padding-block: var(--size-900);
+  padding-inline: rem(30);
+  @include breakpoint(medium) {
+    grid-template-columns: 1fr 1fr;
+    max-inline-size: rem(1200);
+    margin-inline: auto;
+    row-gap: rem(80);
+  }
+}
+
+.review-card {
+  position: relative;
+
+  display: grid;
+  gap: rem(30);
+
+  &:nth-child(even) {
+    @include breakpoint(medium) {
+      transform: translateY(rem(80));
+    }
+  }
+
+  &:nth-child(1) img {
+    filter: invert(23%) sepia(35%) saturate(2463%) hue-rotate(247deg)
+      brightness(92%) contrast(102%);
+  }
+
+  &:nth-child(3) img {
+    filter: invert(52%) sepia(55%) saturate(448%) hue-rotate(0deg)
+      brightness(102%) contrast(93%);
+  }
+
+  &:nth-child(2) img {
+    filter: invert(59%) sepia(8%) saturate(3054%) hue-rotate(133deg)
+      brightness(94%) contrast(81%);
+  }
+
+  &:nth-child(4) img {
+    filter: invert(51%) sepia(10%) saturate(3620%) hue-rotate(77deg)
+      brightness(111%) contrast(75%);
+  }
+}
+
+.review-card__bubble {
+  position: relative;
+
+  max-inline-size: rem(400);
+
+  padding: rem(24);
+  border-radius: rem(8);
+
+  box-shadow: 0 rem(1.6) rem(2.2) rgba(0, 0, 0, 2%),
+    0 rem(3.9) rem(5.3) rgba(0, 0, 0, 2.8%),
+    0 rem(7.3) rem(10) rgba(0, 0, 0, 3.5%),
+    0 rem(13) rem(17.9) rgba(0, 0, 0, 4.2%),
+    0 rem(24.2) rem(33.4) rgba(0, 0, 0, 5%), 0 rem(58) rem(80) rgba(0, 0, 0, 7%);
+
+  img {
+    opacity: 40%;
+    inline-size: 10%;
+
+    padding-block-end: var(--size-400);
+
+    @include breakpoint(large) {
+      inline-size: 20%;
+    }
+  }
+
+  blockquote {
+    font-size: var(--fs-400);
+    @include breakpoint(medium) {
+      font-size: var(--fs-300);
+    }
+    @include breakpoint(large) {
+      font-size: var(--fs-100);
+    }
+  }
+
+  &::after {
+    position: absolute;
+
+    background-color: var(--clr-neutral-100);
+
+    box-shadow: 0 rem(1.6) rem(2.2) rgba(0, 0, 0, 2%),
+      0 rem(3.9) rem(5.3) rgba(0, 0, 0, 2.8%),
+      0 rem(7.3) rem(10) rgba(0, 0, 0, 3.5%),
+      0 rem(13) rem(17.9) rgba(0, 0, 0, 4.2%),
+      0 rem(24.2) rem(33.4) rgba(0, 0, 0, 5%),
+      0 rem(58) rem(80) rgba(0, 0, 0, 7%);
+
+    content: "";
+    clip-path: polygon(51% 100%, 0 0, 100% 0);
+    inset-inline-start: rem(15);
+    inset-block-start: 100%;
+    inline-size: rem(35);
+    block-size: rem(20);
+  }
+}
+
+.review-name {
+  display: flex;
+  gap: rem(16);
+  align-items: center;
+  padding-inline-start: rem(14);
+
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+
+    text-align: center;
+    block-size: rem(40);
+    inline-size: rem(40);
+  }
+}
