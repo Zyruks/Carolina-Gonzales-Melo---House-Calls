@@ -1,37 +1,8 @@
 @use "../abstract" as *;
 
-.plans {
-  flex-direction: column;
-
-  max-inline-size: rem(1200);
-
-  margin-inline: auto;
-
-  h2 {
-    margin-inline-start: rem(20);
-    margin-block-end: rem(100);
-    padding-block-end: rem(20);
-
-    text-align: flex-start;
-    text-transform: uppercase;
-
-    border-block-end: rem(3) dashed var(--clr-primary-300);
-  }
-}
-
-.plans-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
-  align-items: center;
-
-  justify-items: center;
-
-  column-gap: var(--size-400);
-  margin-inline: rem(16);
-  max-inline-size: rem(1200);
-  row-gap: rem(100);
-}
-
+/* ***********
+Card Component
+************ */
 .card {
   position: relative;
 
@@ -141,7 +112,7 @@
 
   list-style: disc;
 
-  & li {
+  li {
     margin-block-start: rem(8);
   }
 }
@@ -168,3 +139,7 @@
     inset-inline: 0;
   }
 }
+
+/* ***********
+Card Component end
+************ */
