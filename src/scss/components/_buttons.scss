@@ -1,127 +1,180 @@
-@use "../abstract/" as *;
+@use "../abstract" as *;
+@use "sass:map";
 
-/***************** 
- #buttons components 
-*****************/
+:where(button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]),
+:where(input[type="file"])::file-selector-button {
+  --accent: #{map.get($buttons, "accent")};
+  --text: #{map.get($buttons, "text")};
+  --bg: #{map.get($buttons, "bg")};
+  --input-well: #{map.get($buttons, "input-well")};
+  --padding-inline: #{map.get($buttons, "padding-inline")};
+  --padding-block: #{map.get($buttons, "padding-block")};
+  --border-color: #{map.get($buttons, "border-color")};
+  --highlight-size: #{map.get($buttons, "highlight-size")};
+  --highlight: #{map.get($buttons, "highlight")};
+  --text-shadow: #{map.get($buttons, "text-shadow")};
+  --icon-size: #{map.get($buttons, "icon-size")};
+  --icon-color: var(--accent);
+  --shadow-color: 220 3% 15%;
+  --shadow-1: #{map.get($buttons, "shadow-1")};
+  --shadow-2: #{map.get($buttons, "shadow-2")}, #{map.get($buttons, "shadow-3")};
+  --shadow-depth: #{map.get($buttons, "shadow-depth")};
+  --transition-motion-reduce: ;
+  --transition-motion-ok: box-shadow var(--duration-250) var(--ease-in-out),
+    outline-offset var(--duration-250) var(--ease-in-out);
+  --transition: var(--transition-motion-reduce);
 
-.btn {
-  display: flex;
-  gap: rem(15);
+  border-radius: #{map.get($buttons, "border-radius")};
 
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]),
+  :where(input[type="file"])::file-selector-button {
+    --transition: var(--transition-motion-ok);
+  }
+}
+
+:where(button, input[type="button"], input[type="submit"], input[type="reset"]),
+:where(input[type="file"])::file-selector-button {
+  display: inline-flex;
+  gap: 1ch;
   align-items: center;
   justify-content: center;
-  min-inline-size: rem(180);
-  border: rem(2) solid rgba(0, 0, 0, 0%);
-  border-radius: rem(10);
+  border: #{map.get($buttons, "border-width")} #{map.get(
+      $buttons,
+      "border-style"
+    )} var(--border-color);
 
-  color: var(--clr-neutral-100);
+  color: var(--text);
 
-  background-color: var(--clr-primary-800);
+  font-weight: #{map.get($buttons, "font-weight")};
+
+  font-size: #{map.get($buttons, "font-size")};
+  text-align: center;
+  text-shadow: var(--text-shadow);
+
+  background: var(--bg);
+  box-shadow: var(--shadow-2), var(--shadow-depth),
+    0 0 0 var(--highlight-size) var(--highlight);
   cursor: pointer;
 
-  transition-timing-function: ease-in-out;
-  transition-duration: 400ms;
+  transition: var(--transition);
 
-  transition-property: color background-color;
-  padding-block: rem(5);
-  padding-inline: rem(20);
-  min-block-size: rem(45);
-
-  &:hover {
-    border: rem(2) solid var(--clr-primary-800);
-
-    background-color: var(--clr-neutral-100);
-  }
-  @include breakpoint(medium) {
-    inline-size: 100%;
-  }
-
-  &:nth-child(1) {
-    justify-content: center;
-    @include breakpoint(medium) {
-      gap: rem(18);
-      justify-content: center;
-    }
-  }
+  user-select: none;
+  touch-action: manipulation;
+  padding-block: var(--padding-block);
+  padding-inline: var(--padding-inline);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
-.btn__icon {
-  inline-size: rem(18);
+/* icons */
+:where(button, input[type="button"], input[type="submit"], input[type="reset"])
+  > :where(svg, [data-icon]) {
+  flex-shrink: 0;
 
-  @include breakpoint(large) {
-    inline-size: rem(24);
-  }
+  filter: drop-shadow(var(--text-shadow));
+
+  fill: none;
+  stroke: var(--icon-color);
+  block-size: var(--icon-size);
+  inline-size: var(--icon-size);
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-/* size for content-info section buttons */
-.item-child .btn {
-  inline-size: 60%;
+/* focus */
+:where(button, input):where(:not(:active)):focus-visible {
+  outline-offset: rem(5);
 }
 
-.btn--inverted {
-  border-color: var(--clr-primary-800);
-
-  color: var(--clr-primary-800);
-
-  background-color: rgba(0, 0, 0, 0%);
-
-  &:hover {
-    color: var(--clr-neutral-100);
-
-    background-color: var(--clr-primary-800);
-  }
+/* pressing */
+:where(button, input[type="button"], input[type="submit"], input[type="reset"]):where(:not(:active):hover) {
+  --highlight-size: #{rem(8)};
 }
 
-.btn--inverted-white {
-  position: relative;
-  z-index: 3;
+/* disabled */
+:where(button, input[type="button"], input[type="submit"], input[type="reset"])[disabled] {
+  --bg: #{map.get($disable-btn, "bg")};
+  --text: #{map.get($disable-btn, "text")};
 
-  min-inline-size: rem(180);
+  box-shadow: var(--shadow-1);
 
-  border: rem(1) solid var(--clr-neutral-100);
-
-  background-color: rgba(0, 0, 0, 0%);
-
-  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
-  inline-size: 50%;
-
-  &:hover {
-    border: rem(1) solid hsl(0deg, 100%, 40%, 0%);
-
-    color: var(--clr-primary-800);
-
-    background-color: var(--clr-neutral-100);
-  }
+  cursor: not-allowed;
 }
 
-.btn--emergency {
-  border: rem(2) solid hsl(0deg, 100%, 40%);
-
-  font-size: var(--fs-500);
-
-  background-color: hsl(0deg, 100%, 40%);
-
-  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
-  inline-size: 60%;
-
-  &:hover {
-    border: rem(2) solid hsl(0deg, 100%, 40%, 0%);
-
-    color: hsl(0deg, 100%, 40%);
-
-    background-color: var(--clr-neutral-100);
-  }
-
-  @include breakpoint(large) {
-    &:hover {
-      border: rem(2) solid hsl(0deg, 100%, 40%);
-    }
-  }
-  @include breakpoint(large) {
-    font-size: var(--fs-200);
-  }
+/* adaptive  text */
+:where([type="submit"], form button:not([type], [disabled])) {
+  --text: var(--accent);
 }
 
-/**********************
- buttons components end 
-***********************/
+/* red reset */
+:where([type="reset"]) {
+  --border-color: #{map.get($reset-btn, "border-color")};
+  --highlight: #{map.get($reset-btn, "highlight")};
+  --text: #{map.get($reset-btn, "text")};
+}
+
+:where([type="reset"]):focus-visible {
+  outline-color: currentcolor;
+}
+
+/* file input */
+:where(input[type="file"]) {
+  inline-size: 100%;
+  max-inline-size: max-content;
+
+  background-color: var(--input-well);
+}
+
+:where(input[type="button"]),
+:where(input[type="file"])::file-selector-button {
+  appearance: none;
+}
+
+:where(input[type="file"])::file-selector-button {
+  margin-inline-end: var(--padding-inline);
+}
+
+/* Custom Button */
+
+:where(button[data-state="emergency"]) {
+  --bg: #{map.get($custom-btn, "bg")};
+  --border-color: #{map.get($custom-btn, "border-color")};
+  --text: #{map.get($custom-btn, "text")};
+  --text-shadow: #{map.get($custom-btn, "text-shadow")};
+  --highlight: #{map.get($custom-btn, "highlight")};
+  text-transform: uppercase;
+}
+
+:where(button[data-state="inverted"]) {
+  --bg: #{map.get($inverted-btn, "bg")};
+  --border-color: #{map.get($inverted-btn, "border-color")};
+  --text: #{map.get($inverted-btn, "text")};
+  --text-shadow: #{map.get($inverted-btn, "text-shadow")};
+  --highlight: #{map.get($inverted-btn, "highlight")};
+}
+
+:where(button[data-state="inverted-white-border"]) {
+  --bg: #{map.get($inverted-btn, "bg")};
+  --border-color: #{map.get($inverted-white-border-btn, "border-color")};
+  --text: #{map.get($inverted-btn, "text")};
+  --text-shadow: #{map.get($inverted-btn, "text-shadow")};
+  --highlight: #{map.get($inverted-btn, "highlight")};
+}
+
+:where(button[data-state="invisible"]) {
+  --bg: none;
+  --border-color: none;
+  --text: none;
+  --text-shadow: none;
+  --highlight: none;
+}
+
+.btn-large {
+  --size: 4rem;
+}

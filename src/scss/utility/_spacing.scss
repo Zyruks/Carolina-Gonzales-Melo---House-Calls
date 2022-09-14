@@ -1,24 +1,55 @@
 @use "../abstract/" as *;
 @use "sass:string";
-@use "sass:map";
 
-@each $position, $areas in $positions {
-  @each $area, $value in $areas {
-    @each $size, $value in $sizes {
-      .#{$position}-#{$area}-#{$size} {
-        #{$position}-#{$area}: $value;
+@each $box in $boxes {
+  @each $position in $block-positions {
+    @each $space, $value in $spaces {
+      @if ($position == "") {
+        .#{$box}-#{$space} {
+          #{$box}: #{$value};
+        }
+      } @else {
+        .#{$box}-#{$position}-#{$space} {
+          #{$box}-#{$position}: #{$value};
+        }
       }
     }
   }
 }
 
-.container {
+@each $gap, $value in $spaces {
+  .gap-#{$gap} {
+    gap: #{$value};
+  }
+}
+
+@each $radius, $value in $corner-radius {
+  .border-radius-#{$radius} {
+    border-radius: #{$value};
+  }
+}
+
+@each $item in $aligns {
+  @each $position in $content-positions {
+    .#{$item}-#{$position} {
+      #{$item}: #{$position};
+    }
+  }
+}
+
+@each $space, $value in $spaces {
+  .max-width-#{$space} {
+    max-inline-size: #{$value};
+  }
+}
+
+.position-relative {
   position: relative;
-
-  inline-size: 100%;
+}
+.z-index-400 {
+  z-index: 4;
 }
 
-.dp-flex {
-  display: flex;
+.z-index-500 {
+  z-index: 5;
 }
-/* utility classes end*/

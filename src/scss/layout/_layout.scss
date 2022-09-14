@@ -1,7 +1,41 @@
 @use "../abstract" as *;
 
-main {
-  z-index: 1;
+/**
+ * WRAPPER
+ * Sets a max width, adds a consistent gutter and horizontally
+ * centers the contents
+ */
+.wrapper {
+  position: relative;
+
+  inline-size: 95vw;
+
+  max-inline-size: rem(1300);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.dp-flex {
+  display: flex;
+}
+
+.dp-grid {
+  display: grid;
+}
+
+.invert-items {
+  @include breakpoint(medium) {
+    grid-column: 1 / 2;
+  }
+}
+
+.grid-img {
+  max-block-size: rem(100);
+  max-inline-size: rem(100);
+}
+
+.justify-space-between {
+  justify-content: space-between;
 }
 
 .even-columns {
@@ -14,5 +48,46 @@ main {
   @include breakpoint(medium) {
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
+  }
+}
+
+.grid-30-60 {
+  grid-template-columns: 0.3fr 1fr;
+}
+
+.even-rows {
+  display: grid;
+  grid-auto-rows: 1fr;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  @include breakpoint(medium) {
+    grid-auto-flow: row;
+  }
+}
+
+.grid-grow {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100% / 1, max(rem(250), 100% / 4)), 1fr)
+  );
+  align-items: center;
+  justify-items: center;
+}
+
+.grid-grow-two-columns {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100% / 2, max(rem(320), 100% / 3)), 1fr)
+  );
+}
+
+.btn-container {
+  justify-content: center;
+  @include breakpoint(medium) {
+    justify-content: flex-start;
   }
 }

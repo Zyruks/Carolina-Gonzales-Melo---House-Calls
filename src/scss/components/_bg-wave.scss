@@ -1,0 +1,96 @@
+@use "../abstract" as *;
+
+.wave {
+  &::before {
+    position: absolute;
+
+    background-image: url("../assets/svg/wave.svg");
+
+    background-repeat: no-repeat;
+
+    background-position: center center;
+
+    background-size: contain;
+
+    content: "";
+
+    inset-inline: 0;
+
+    min-inline-size: rem(600);
+  }
+
+  &::after {
+    position: absolute;
+
+    background-image: url("../assets/svg/wave.svg");
+
+    background-repeat: no-repeat;
+
+    background-position: center bottom;
+
+    background-size: contain;
+    transform: rotate(180deg) scaleX(-1);
+
+    content: "";
+
+    inset-inline: 0;
+
+    block-size: rem(145);
+  }
+}
+
+.wave-1 {
+  &::before {
+    inset-block-start: -46%;
+
+    block-size: 100%;
+    @include breakpoint(medium) {
+      inset-block-start: -40%;
+
+      min-inline-size: none;
+    }
+  }
+
+  &::after {
+    inset-block-end: -92%;
+
+    block-size: 100%;
+    @include breakpoint(medium) {
+      inset-block-end: -79%;
+
+      min-inline-size: none;
+    }
+    @include breakpoint(large) {
+      inset-block-end: -81%;
+    }
+    @include breakpoint(x-large) {
+      inset-block-end: -82%;
+    }
+  }
+}
+
+.wave-2 {
+  &::before {
+    inset-block-start: -46%;
+    block-size: 100%;
+    @include breakpoint(medium) {
+      inset-block-start: -40%;
+
+      min-inline-size: none;
+    }
+    @include breakpoint(x-large) {
+      inset-block-start: -37%;
+    }
+  }
+
+  &::after {
+    inset-block-end: -92%;
+    block-size: 100%;
+    @include breakpoint(medium) {
+      inset-block-end: -78%;
+    }
+    @include breakpoint(x-large) {
+      inset-block-end: -73%;
+    }
+  }
+}

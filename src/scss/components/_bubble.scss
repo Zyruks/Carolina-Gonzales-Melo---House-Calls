@@ -1,33 +1,29 @@
 @use "../abstract" as *;
 
-.review .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: rem(32);
-  align-items: center;
-  justify-items: center;
-  padding-block: var(--size-900);
-  padding-inline: rem(30);
-  @include breakpoint(medium) {
-    grid-template-columns: 1fr 1fr;
-    max-inline-size: rem(1200);
-    margin-inline: auto;
-    row-gap: rem(80);
-  }
-}
-
-.review-card {
+.bubble {
   position: relative;
 
   display: grid;
   gap: rem(30);
 
   &:nth-child(even) {
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       transform: translateY(rem(80));
     }
   }
 
+  img {
+    opacity: 40%;
+    inline-size: 10%;
+
+    padding-block-end: var(--size-400);
+
+    @include breakpoint(medium) {
+      inline-size: 20%;
+    }
+  }
+
+  /* Changing color of quotation marks svg */
   &:nth-child(1) img {
     filter: invert(23%) sepia(35%) saturate(2463%) hue-rotate(247deg)
       brightness(92%) contrast(102%);
@@ -49,7 +45,7 @@
   }
 }
 
-.review-card__bubble {
+.bubble__review {
   position: relative;
 
   max-inline-size: rem(400);
@@ -63,27 +59,7 @@
     0 rem(13) rem(17.9) rgba(0, 0, 0, 4.2%),
     0 rem(24.2) rem(33.4) rgba(0, 0, 0, 5%), 0 rem(58) rem(80) rgba(0, 0, 0, 7%);
 
-  img {
-    opacity: 40%;
-    inline-size: 10%;
-
-    padding-block-end: var(--size-400);
-
-    @include breakpoint(large) {
-      inline-size: 20%;
-    }
-  }
-
-  blockquote {
-    font-size: var(--fs-400);
-    @include breakpoint(medium) {
-      font-size: var(--fs-300);
-    }
-    @include breakpoint(large) {
-      font-size: var(--fs-100);
-    }
-  }
-
+  /* Invert Triangle for bubble  */
   &::after {
     position: absolute;
 
@@ -105,7 +81,7 @@
   }
 }
 
-.review-name {
+.bubble__name {
   display: flex;
   gap: rem(16);
   align-items: center;
@@ -115,7 +91,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
 
     text-align: center;
     block-size: rem(40);

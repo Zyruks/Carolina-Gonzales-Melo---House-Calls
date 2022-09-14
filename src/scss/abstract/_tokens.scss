@@ -1,0 +1,264 @@
+@use "functions" as *;
+@use "sass:map";
+
+/* fonts */
+$font-families: (
+  "headings": "lato",
+  "body": "lato",
+);
+
+$font-sizes: (
+  "classic": (
+    "100": 0.25rem,
+    "200": 0.5rem,
+    "300": 0.75rem,
+    "400": 1rem,
+    "500": 1.5rem,
+    "600": 2rem,
+    "700": 2.5rem,
+    "800": 3rem,
+    "900": 4rem,
+  ),
+  "fluid": (
+    //  8.68px to 12.19
+    "100": clamp(0.54rem, calc(0.44rem + 0.44vw), 0.77rem),
+    // 10.42px to 15.16
+    "200": clamp(0.65rem, calc(0.51rem + 0.6vw), 0.96rem),
+    // 12.50px to 1920
+    "300": clamp(0.78rem, calc(0.59rem + 0.81vw), 1.2rem),
+    // 15px to 24px
+    "400": clamp(0.94rem, calc(0.68rem + 1.09vw), 1.5rem),
+    // 18px to 30
+    "500": clamp(1.13rem, calc(0.78rem + 1.45vw), 1.88rem),
+    // 21.60px to 37.50
+    "600": clamp(1.35rem, calc(0.9rem + 1.93vw), 2.34rem),
+    // 25.92px to 46.88
+    "700": clamp(1.62rem, calc(1.02rem + 2.54vw), 2.93rem),
+    // 31.10px to 58.59
+    "800": clamp(1.94rem, calc(1.16rem + 3.33vw), 3.66rem),
+    // 37.32px to 73.24
+    "900": clamp(2.33rem, calc(1.31rem + 4.35vw), 4.58rem),
+  ),
+);
+
+$font-weights: (
+  "300": 300,
+  "400": 400,
+  "700": 700,
+);
+
+$line-heights: (
+  "400": 1,
+  "500": 1.1,
+  "600": 1.5,
+  "700": 1.6,
+  "800": 1.8,
+  "900": 2,
+);
+
+$text-align: ("start", "end", "center", "justify");
+
+$letter-spacings: (
+  "extra-tight": rem(-2),
+  "tight": rem(-1),
+  "loose": rem(1),
+);
+/* fonts end */
+
+/* colors */
+$colors: (
+  "primary": (
+    "100": hsl(273, 53%, 90%),
+    "200": hsl(273, 53%, 87%),
+    "300": hsl(273, 53%, 77%),
+    "500": hsl(273, 53%, 67%),
+    "600": hsl(273, 53%, 57%),
+    "700": hsl(273, 53%, 47%),
+    "800": hsl(273, 53%, 37%),
+    "900": hsl(273, 53%, 27%),
+  ),
+  "accent": (
+    "200": hsl(240deg, 50%, 50%),
+    "300": hsl(39, 50%, 50%),
+    "400": hsl(182, 51%, 44%),
+    "500": hsl(128, 54%, 45%),
+  ),
+  "neutral": (
+    "100": hsl(0deg, 0%, 100%),
+    "200": hsl(0deg, 0%, 90%),
+    "300": hsl(0deg, 0%, 80%),
+    "400": hsl(0deg, 0%, 70%),
+    "500": hsl(0deg, 0%, 60%),
+    "600": hsl(0deg, 0%, 50%),
+    "700": hsl(0deg, 0%, 40%),
+    "800": hsl(0deg, 0%, 30%),
+    "900": hsl(0deg, 0%, 20%),
+  ),
+);
+/* colors end */
+
+/* spaces */
+$spaces: (
+  "none": 0,
+  "100": rem(4),
+  "200": rem(8),
+  "300": rem(12),
+  "400": rem(16),
+  "500": rem(24),
+  "600": rem(32),
+  "700": rem(48),
+  "750": rem(60),
+  "800": rem(72),
+  "900": rem(96),
+  "auto": auto,
+);
+
+$block-positions: (
+  "",
+  "block",
+  "block-start",
+  "block-end",
+  "inline",
+  "inline-start",
+  "inline-end"
+);
+
+$boxes: ("margin", "padding");
+
+$aligns: (
+  "justify-content",
+  "justify-items",
+  "justify-self",
+  "align-content",
+  "align-items",
+  "align-self",
+  "place-content",
+  "place-items",
+  "place-self"
+);
+
+$content-positions: (
+  "flex-start",
+  "center",
+  "flex-end",
+  "space-around",
+  "space-between",
+  "space-evenly"
+);
+
+/* spaces end */
+
+/* block */
+$corner-radius: (
+  "base": rem(4),
+  "big": rem(6),
+  "full": 50%,
+  "sides": rem(9999),
+);
+
+$drop-shadows: (
+  "100": 0px 1px 3px rgba(0, 0, 0, 0.1),
+  "200": 0px 2px 4px rgba(0, 0, 0, 0.15),
+  "300": 0px 2px 7px rgba(0, 0, 0, 0.15),
+  "400": 0px 2px 10px rgba(0, 0, 0, 0.2),
+);
+/* block end*/
+
+/* animations */
+$easing: (
+  "ease-in": cubic-bezier(0.5, 0, 1, 1),
+  "ease-out": cubic-bezier(0, 0, 0.4, 1),
+  "ease-in-out": cubic-bezier(0.45, 0, 0.4, 1),
+);
+
+$durations: (
+  "100": 75ms,
+  "200": 100ms,
+  "250": 150ms,
+  "300": 200ms,
+  "400": 250ms,
+  "500": 300ms,
+  "600": 350ms,
+  "700": 400ms,
+);
+/* animations end*/
+
+/* breakpoints */
+
+/* em units are best for breakpoints, rem have bugs on safari. 05/10/2022 */
+$breakpoints: (
+  "small": em(481),
+  "medium": em(700),
+  "large": em(1025),
+  "x-large": em(1200),
+);
+
+/* 0.2px difference that way no visual bug and problems with breakpoints-up */
+$breakpoints-max: (
+  "small": em(481.9988),
+  "medium": em(699.9988),
+  "large": em(1024.9988),
+);
+
+/* breakpoints end */
+
+/* buttons */
+
+$buttons: (
+  //  The font size and weight only control the [type="file"] if you need to change the font-size and font-weight use utility classes on parent element.
+  "font-size": var(--fs-400),
+  "font-weight": var(--fw-700),
+  "accent": var(--clr-accent-700),
+  "text": var(--clr-neutral-100),
+  "bg": var(--clr-primary-800),
+  "input-well": var(--clr-neutral-200),
+  "padding-inline": 1.75ch,
+  "padding-block": 0.75ch,
+  "border-radius": var(--corner-radius-big),
+  "border-color": var(--clr-primary-800),
+  "border-style": solid,
+  "border-width": rem(2),
+  "highlight-size": rem(0),
+  "highlight": hsla(273, 53%, 37%, 25%),
+  "text-shadow": 0 rem(1) 0 var(--clr-neutral-200),
+  "icon-size": 2ch,
+  "icon-color": var(--accent),
+  "shadow-color": hsl(220deg, 3%, 15%),
+  "shadow-1": 0 rem(1) rem(2) rem(-1) hsla(220deg, 3%, 15%, 10%),
+  "shadow-2": 0 rem(3) rem(5) rem(-2) hsla(220deg, 3%, 15%, 4%),
+  "shadow-3": 0 rem(7) rem(14) rem(-5) rgba(7, 131, 255, 0.06),
+  "shadow-depth": 0 rem(1) var(--clr-neutral-200)
+);
+
+$disable-btn: (
+  "bg": none,
+  "text": rgb(144, 156, 150),
+);
+
+$reset-btn: (
+  "border-color": hsl(0deg, 100%, 83%),
+  "highlight": hsl(0deg, 100%, 89%, 20%),
+  "text": hsl(0deg, 80%, 50%),
+);
+
+$custom-btn: (
+  "bg": linear-gradient(rgb(250, 92, 92), rgb(235, 66, 66)),
+  "border-color": rgb(245, 77, 77),
+  "text": hsl(228deg, 89%, 100%),
+  "text-shadow": 0 rem(1) 0 rgb(200, 55, 55),
+  "highlight": rgba(250, 92, 92, 0.2),
+);
+
+$inverted-btn: (
+  "bg": rgba(0, 0, 0, 0),
+  "border-color": var(--clr-primary-800),
+  "text": var(--clr-neutral-100),
+  "text-shadow": 0 rem(1) 0 var(--clr-primary-200),
+  "highlight": var(--clr-neutral-200),
+);
+
+$inverted-white-border-btn: (
+  "border-color": var(--clr-neutral-100),
+);
+
+/* buttons end */

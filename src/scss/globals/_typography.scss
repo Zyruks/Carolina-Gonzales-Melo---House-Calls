@@ -16,7 +16,7 @@ p {
  header typography 
 *****************/
 
-.nav__item {
+.nav__item:not([data-state="emergency"]) {
   color: var(--clr-neutral-100);
   font-weight: var(--fw-nav);
   font-size: var(--fs-nav);
@@ -27,12 +27,11 @@ p {
   }
 }
 
-.btn--emergency {
-  color: var(--clr-neutral-100);
-  font-size: var(--fs-550);
-  text-transform: uppercase;
-  @include breakpoint(large) {
-    font-size: var(--fs-500);
+.additional-services {
+  font-size: var(--fluid-fs-600);
+
+  @include breakpoint(small) {
+    font-size: var(--fluid-fs-500);
   }
 }
 

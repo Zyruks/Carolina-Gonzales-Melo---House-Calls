@@ -11,7 +11,7 @@
     />
     <meta name="keywords" content="frontend mentor" />
     <meta name="robots" content="index, follow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <meta name="language" content="English" />
 
     <!-- favicon responsive -->
@@ -54,10 +54,6 @@
 
     <!-- google stuff end-->
 
-    <!-- vendors -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
-    <!-- vendors end -->
-
     <!-- styles -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- styles end -->
@@ -65,24 +61,28 @@
 
   <body>
     <!-- #header section -->
-    <header class="header">
-      <div class="container">
+    <header class="wrapper | margin-block-start-600">
+      <div class="dp-flex justify-space-between">
         <img src="./assets/svg/sonography.svg" alt="logo" class="logo" />
         <!-- #primary nav menu -->
 
-        <nav class="nav js-nav">
+        <nav class="nav js-nav | z-index-500">
           <a href="#" class="nav__item hover-state">service</a>
           <a href="#" class="nav__item hover-state">plans</a>
           <a href="#" class="nav__item hover-state">about</a>
           <a href="#" class="nav__item hover-state">contact</a>
-          <button class="nav__item btn btn--emergency | fw-700">
+          <button class="nav__item | fw-700" data-state="emergency">
             emergency
           </button>
         </nav>
         <!-- #primary nav menu end-->
 
         <!-- #burger menu icon-->
-        <button class="hamburger js-hamburger" type="button">
+        <button
+          class="hamburger js-hamburger"
+          type="button"
+          data-state="invisible"
+        >
           <span class="hamburger-box">
             <span class="line line-1 js-line"></span>
             <span class="line line-2 js-line"></span>
@@ -96,61 +96,66 @@
 
     <!-- main  -->
     <main class="margin-block-600">
-      <section class="hero">
+      <section class="wrapper margin-block-end-900 z-index-400">
         <div class="even-columns">
           <div>
-            <h1 class="primary-heading text-primary-700 margin-block-300">
+            <h1 class="margin-block-300">
               Fast and reliable medic at your service
             </h1>
-            <p
-              class="fs-450 text-neutral-600 lh-500 margin-block-start-100 margin-block-end-500"
-            >
+            <p class="margin-block-start-100 margin-block-end-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eum
               repellendus neque laborum, quaerat non provident veritatis
               accusamus.
             </p>
-            <div class="hero__btn-container">
+            <div class="btn-container | dp-flex gap-600">
               <button class="btn js-hero-btn | fs-btn fw-400">
-                <img
-                  src="./assets/svg/phone.svg"
-                  alt="phone illustration"
-                  class="btn__icon"
-                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewbox="0 0 16 20"
+                >
+                  <path
+                    fill="#fff"
+                    d="m15.544 13.957-3.5-1.782a.64.64 0 0 0-.474-.045.748.748 0 0 0-.401.301l-1.55 2.25c-2.433-1.363-4.39-3.688-5.538-6.576l1.894-1.841a.922.922 0 0 0 .254-.477 1.044 1.044 0 0 0-.038-.562l-1.5-4.156a.851.851 0 0 0-.352-.442.65.65 0 0 0-.508-.074l-3.25.89a.748.748 0 0 0-.418.314A1 1 0 0 0 0 2.31c0 9.52 6.497 17.22 14.5 17.22a.68.68 0 0 0 .467-.194.925.925 0 0 0 .264-.497l.75-3.86a1.054 1.054 0 0 0-.063-.605.832.832 0 0 0-.374-.418Z"
+                  />
+                </svg>
+
                 <a href="tel:+18294261492" class="text-neutral-100">CALL US!</a>
               </button>
-              <button class="btn btn--inverted">
-                <a href="#services" class="fs-btn fw-400"> SERVICES</a>
+              <button data-state="inverted-white-border">
+                <a href="#services" class="text-primary-800 fw-700">
+                  SERVICES</a
+                >
               </button>
             </div>
           </div>
-          <div class="hero__img">
-            <img src="./assets/svg/hero.svg" alt="Illustration Blonde Woman" />
-          </div>
+
+          <img src="./assets/svg/hero.svg" alt="Illustration Blonde Woman" />
         </div>
       </section>
 
-      <section class="content-info margin-block-900">
+      <section class="content-info | text-neutral-100 margin-block-900">
         <!-- #content-info first child -->
-        <div class="content-info__item">
-          <div class="container even-columns" data-children="first-child">
-            <div class="item-child">
-              <h3 class="third-heading fw-700 text-neutral-100">
-                No more waiting
-              </h3>
-              <p
-                class="fs-body fw-400 lh-500 text-neutral-100 padding-block-400"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                eleifend suscipit elementum. Curabitur ut purus in risus
-                fermentum sollicitudin.
+        <div
+          class="content-info__item | wave wave-1 | bg-primary-800 position-relative"
+        >
+          <div class="wrapper even-columns | gap-500">
+            <div class="item-child | margin-block-start-800">
+              <h3 class="text-neutral-100">Know your Doctor</h3>
+              <p class="padding-block-400">
+                doctor gonzalez melo be your first-call! A house call diagnosis
+                with comprehensive management of next steps (if required) with
+                preferential appointments at a bespoke team of specialists( if
+                required ) and priority (reduced waiting room) .
               </p>
               <button
-                class="btn btn--inverted-white | fs-btn fw-700 margin-block-start-400"
+                class="border-neutral-100 margin-block-start-400 position-relative z-index-400"
+                data-state="inverted-white-border"
               >
                 Learn More
               </button>
             </div>
-            <div class="item-child">
+            <div class="item-child invert-items">
               <img
                 src="./assets/svg/doc.svg"
                 alt="illustration doctor blonde"
@@ -162,24 +167,20 @@
         <!-- #content-info first end -->
         <!-- #content-info second child -->
 
-        <div class="content-info__item">
-          <div class="container even-columns" data-children="second-child">
+        <div
+          class="content-info__item margin-block-500 z-index-400 position-relative"
+        >
+          <div class="wrapper even-columns">
             <div class="item-child">
               <h3 class="third-heading fw-700 text-primary-800">
                 Don’t wait, we go to your place
               </h3>
-              <p
-                class="fs-body lh-500 fw-400 text-neutral-600 padding-block-400"
-              >
+              <p class="text-neutral-600 padding-block-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 eleifend suscipit elementum. Curabitur ut purus in risus
                 fermentum sollicitudin.
               </p>
-              <button
-                class="btn btn--inverted | fs-btn fw-700 margin-block-start-400"
-              >
-                Learn More
-              </button>
+              <button class="margin-block-start-400">Learn More</button>
             </div>
             <div class="item-child">
               <img
@@ -195,22 +196,25 @@
 
         <!-- #content-info third child -->
 
-        <div class="content-info__item">
-          <div class="container even-columns" data-children="third-child">
+        <div
+          class="content-info__item | wave wave-2 | text-neutral-100 bg-primary-800 position-relative padding-block-900"
+        >
+          <div class="wrapper even-columns | padding-block-800 gap-500">
             <div class="item-child">
-              <h3 class="third-heading fw-700 text-neutral-100">We do care</h3>
-              <p class="fs-body fw-400 text-neutral-100 padding-block-400">
+              <h3 class="text-neutral-100">We do care</h3>
+              <p class="padding-block-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 eleifend suscipit elementum. Curabitur ut purus in risus
                 fermentum sollicitudin. Donec quis mattis nulla
               </p>
               <button
-                class="btn btn--inverted-white | fs-btn fw-700 margin-block-start-400"
+                class="margin-block-start-400 position-relative z-index-400"
+                data-state="inverted-white-border"
               >
                 Learn More
               </button>
             </div>
-            <div class="item-child">
+            <div class="item-child invert-items">
               <img
                 data-value="heart"
                 src="./assets/svg/heart.svg"
@@ -222,83 +226,143 @@
         </div>
         <!-- #content-info third child end -->
       </section>
+      <!-- services -->
       <section class="services" id="services">
-        <div class="container grid-service">
-          <h2 class="service-title | secondary-heading text-primary-800 fw-700">
-            services
-          </h2>
-          <div class="grid-service__item">
-            <img src="./assets/svg/498-ambulance.svg" alt="Ambulance" />
-            <p class="fw-400 text-neutral-900">Evaluation Exam & Diagnosis</p>
+        <!-- primary services -->
+        <article
+          class="wrapper text-neutral-900 fluid-fs-500 text-transform__uppercase"
+        >
+          <h2 class="title | text-align-start">services</h2>
+          <div class="grid-grow | gap-600 text-align-center">
+            <div class="even-rows | gap-300">
+              <img
+                class="grid-img"
+                src="./assets/svg/498-ambulance.svg"
+                alt="Ambulance"
+              />
+              <p>
+                Evaluation exam <br />
+                & diagnosis
+              </p>
+            </div>
+            <div class="even-rows | gap-300">
+              <img
+                class="grid-img"
+                src="./assets/svg/blood.svg"
+                alt="Heart Illustration"
+              />
+              <p>
+                Blood pressure <br />
+                exam
+              </p>
+            </div>
+            <div class="even-rows | gap-300">
+              <img
+                class="grid-img"
+                src="./assets/svg/pulmonary.svg"
+                alt="Ambulance"
+              />
+              <p>
+                Pulmonary <br />
+                exam
+              </p>
+            </div>
+            <div class="even-rows | gap-300">
+              <img
+                class="grid-img"
+                src="./assets/svg/medicine.svg"
+                alt="Ambulance"
+              />
+              <p>
+                Prescriptions <br />
+                delivered
+              </p>
+            </div>
+            <div class="even-rows | gap-300">
+              <img
+                class="grid-img"
+                src="./assets/svg/glucose.svg"
+                alt="Ambulance"
+              />
+              <p>
+                Blood glucose <br /><span class="fw-300">(Diabetes-test)</span>
+              </p>
+            </div>
           </div>
-          <div class="grid-service__item">
-            <img src="./assets/svg/blood.svg" alt="Heart Illustration" />
-            <p class="fw-400 text-neutral-900">Blood pressure exam</p>
-          </div>
-          <div class="grid-service__item">
-            <img src="./assets/svg/pulmonary.svg" alt="Ambulance" />
-            <p class="fw-400 text-neutral-900">Pulmonary Exam</p>
-          </div>
-          <div class="grid-service__item">
-            <img src="./assets/svg/medicine.svg" alt="Ambulance" />
-            <p class="fw-400 text-neutral-900">prescriptions delivered</p>
-          </div>
-          <div class="grid-service__item">
-            <img src="./assets/svg/glucose.svg" alt="Ambulance" />
-            <p class="fw-400 text-neutral-900">
-              blood glucose <span class="fw-300">(Diabetes-test)</span>
-            </p>
-          </div>
-        </div>
-        <div class="container grid-additional-service">
-          <h2
-            class="service-title | fs-additional-service-title text-primary-800 fw-700"
+        </article>
+        <!-- primary services end -->
+
+        <!-- additional services -->
+        <article class="text-neutral-800 wrapper margin-block-start-700">
+          <h2 class="title | text-align-start">Additional Services</h2>
+          <div
+            class="additional-services grid-grow-two-columns | dp-grid gap-700"
           >
-            Additional Services
-          </h2>
-          <div class="additional-service__item">
-            <img
-              src="./assets/svg/blood-work.svg"
-              alt="Blood Work Illustration"
-            />
-            <span>Blood Work</span>
+            <div class="even-columns grid-30-60 gap-400">
+              <img
+                class="max-width-800"
+                src="./assets/svg/blood-work.svg"
+                alt="Blood Work Illustration"
+              />
+              <span class="justify-self-flex-start">Blood Work</span>
+            </div>
+            <div class="even-columns grid-30-60 gap-400">
+              <img
+                class="max-width-800"
+                src="./assets/svg/Ivs.svg"
+                alt="Blood Work Illustration"
+              />
+              <span class="justify-self-flex-start">IV's for Dehydration</span>
+            </div>
+            <div class="even-columns grid-30-60 gap-400">
+              <img
+                class="max-width-750"
+                src="./assets/svg/sonography.svg"
+                alt="Blood Work Illustration"
+              />
+              <span class="justify-self-flex-start">Sonography</span>
+            </div>
+            <div class="even-columns grid-30-60 gap-400">
+              <img
+                class="max-width-750"
+                src="./assets/svg/wound.svg"
+                alt="Blood Work Illustration"
+              />
+              <span class="justify-self-flex-start"
+                >Wound Care <br />
+                <span class="fw-300 text-neutral-500"
+                  >(Stiches, Antibiotics)</span
+                ></span
+              >
+            </div>
+            <div class="even-columns grid-30-60 gap-400">
+              <img
+                class="max-width-800"
+                src="./assets/svg/allergies.svg"
+                alt="Blood Work Illustration"
+              />
+              <span class="justify-self-flex-start">Allergies Rashes</span>
+            </div>
+            <div class="even-columns grid-30-60 gap-400">
+              <img
+                class="max-width-800"
+                src="./assets/svg/urinary.svg"
+                alt="Blood Work Illustration"
+              />
+              <span class="justify-self-flex-start"
+                >Urinary Tract Infections</span
+              >
+            </div>
           </div>
-          <div class="additional-service__item">
-            <img src="./assets/svg/Ivs.svg" alt="Blood Work Illustration" />
-            <span>IV's for Dehydration</span>
-          </div>
-          <div class="additional-service__item">
-            <img
-              src="./assets/svg/sonography.svg"
-              alt="Blood Work Illustration"
-            />
-            <span>Sonography</span>
-          </div>
-          <div class="additional-service__item">
-            <img src="./assets/svg/wound.svg" alt="Blood Work Illustration" />
-            <span
-              >Wound Care <br />
-              <span class="fw-300">(Stiches, Antibiotics)</span></span
-            >
-          </div>
-          <div class="additional-service__item">
-            <img
-              src="./assets/svg/allergies.svg"
-              alt="Blood Work Illustration"
-            />
-            <span>Allergies Rashes</span>
-          </div>
-          <div class="additional-service__item">
-            <img src="./assets/svg/urinary.svg" alt="Blood Work Illustration" />
-            <span>Urinary Tract Infections</span>
-          </div>
-        </div>
+        </article>
+        <!-- additional services end -->
       </section>
-      <section class="plans container | margin-block-700">
-        <h2 class="secondary-heading | text-primary-800">Plans</h2>
-        <div class="plans-container">
+      <!-- services end -->
+      <section class="wrapper | fw-700 margin-block-900">
+        <h2 class="title">Plans</h2>
+        <div class="grid-grow | gap-800 margin-block-900">
           <div class="card">
-            <div class="card__title | fw-700 text-primary-800">
+            <div class="card__title">
               <h3>Anual Plan</h3>
               <span class="fw-300 text-neutral-600">Best initial plan</span>
             </div>
@@ -307,86 +371,32 @@
               <span>$</span>
               <h3>100</h3>
               <span> /yearly </span>
-              <span class="| fw-400 text-neutral-600">USD</span>
+              <span class="text-neutral-600">USD</span>
             </div>
 
             <ul class="card__list | text-primary-800">
-              <li>Included in package</li>
+              <li class="fluid-fs-500">Included in package</li>
               <li>1 Annual Visit</li>
               <li>5 Phone <span class="fw-300"> consultations </span></li>
-              <li>1 Patient History <span class="fw-300">Review</span></li>
-              <li>Vital Signs:</li>
-              <ul class="card__sub-list | fw-300">
-                <li>Blood Pressure</li>
-                <li>Heart Rate</li>
-                <li>Respiration Rate</li>
-              </ul>
-              <li>1 Heart</li>
-              <li>1 Lung</li>
-              <li>1 Abdominal</li>
-              <li>1 Neurological</li>
-              <li>1 Dermatological</li>
-              <li>1 Extremities</li>
-              <li>1 EKG ( coming soon )</li>
-              <li>
-                1 Specific Male <br />
-                or Female Indicators Exam
-              </li>
-              <li>Lab Work:</li>
-              <ul class="card__sub-list | fw-300">
-                <li>Lipid Panel</li>
-                <li>Cholesterol</li>
-                <li>Heart Disease</li>
-                <li>Blood Sugar (Diabetes)</li>
-              </ul>
-              <li>and more...</li>
-              <li>1 Prevention and Planning</li>
             </ul>
           </div>
           <div class="card best-deal | bg-primary-800 text-neutral-100">
             <div class="card__title fw-700">
-              <h3>Bi-anual Plan</h3>
+              <h3 class="text-neutral-100">Bi-anual Plan</h3>
               <span class="fw-300">Full Package</span>
             </div>
 
             <div class="card__price">
               <span>$</span>
-              <h3>150</h3>
+              <h3 class="text-neutral-100">150</h3>
               <span> /yearly </span>
-              <span class="| fw-400">USD</span>
+              <span>USD</span>
             </div>
 
             <ul class="card__list">
-              <li>Included in package</li>
+              <li class="fluid-fs-500">Included in package</li>
               <li>2 Annual Visit</li>
               <li>10 Phone <span class="fw-300"> consultations </span></li>
-              <li>2 Patient History <span class="fw-300">Review</span></li>
-              <li>Vital Signs:</li>
-              <ul class="card__sub-list | fw-300">
-                <li>Blood Pressure</li>
-                <li>Heart Rate</li>
-                <li>Respiration Rate</li>
-              </ul>
-              <li>2 Heart</li>
-              <li>2 Lung</li>
-              <li>2 Abdominal</li>
-              <li>2 Neurological</li>
-              <li>2 Dermatological</li>
-              <li>2 Extremities</li>
-              <li>2 EKG ( coming soon )</li>
-              <li>
-                2 Specific Male <br />
-                or Female Indicators Exam
-              </li>
-              <li>Lab Work:</li>
-              <ul class="card__sub-list | fw-300">
-                <li>Lipid Panel</li>
-                <li>Cholesterol</li>
-                <li>Heart Disease</li>
-                <li>Blood Sugar (Diabetes)</li>
-              </ul>
-              <li>and more...</li>
-              <li>2 Prevention and Planning</li>
             </ul>
           </div>
           <div class="card">
@@ -399,53 +409,68 @@
               <span>$</span>
               <h3>80</h3>
               <span> /per person </span>
-              <span class="fw-400 text-neutral-600">USD</span>
+              <span class="text-neutral-600">USD</span>
             </div>
 
             <ul class="card__list | text-primary-800">
-              <li>Included in package</li>
+              <li class="fluid-fs-500">Included in package</li>
               <li>1 Annual Visit</li>
               <li>5 Phone <span class="fw-300"> consultations </span></li>
-              <li>1 Patient History <span class="fw-300">Review</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="margin-block-800">
+          <h3 class="text-align-center">Every plan Include</h3>
+          <div
+            class="even-columns align-items-flex-start margin-block-300 text-primary-800"
+          >
+            <ul>
+              <li>Patient History <span class="fw-300">Review</span></li>
               <li>Vital Signs:</li>
-              <ul class="card__sub-list | fw-300">
-                <li>Blood Pressure</li>
-                <li>Heart Rate</li>
-                <li>Respiration Rate</li>
-              </ul>
-              <li>1 Heart</li>
-              <li>1 Lung</li>
-              <li>1 Abdominal</li>
-              <li>1 Neurological</li>
-              <li>1 Dermatological</li>
-              <li>1 Extremities</li>
-              <li>1 EKG ( coming soon )</li>
+
+              <li class="fw-300 margin-inline-start-400">Blood Pressure</li>
+              <li class="fw-300 margin-inline-start-400">Heart Rate</li>
+              <li class="fw-300 margin-inline-start-400">Respiration Rate</li>
+
+              <li>Heart</li>
+              <li>Lung</li>
+              <li>Abdominal</li>
+              <li>Neurological</li>
+              <li>Dermatological</li>
+              <li>Extremities</li>
+            </ul>
+            <ul>
+              <li>EKG <span class="fw-300">( coming soon ) </span></li>
               <li>
-                1 Specific Male <br />
+                Specific Male <br />
                 or Female Indicators Exam
               </li>
               <li>Lab Work:</li>
-              <ul class="card__sub-list | fw-300">
-                <li>Lipid Panel</li>
-                <li>Cholesterol</li>
-                <li>Heart Disease</li>
-                <li>Blood Sugar (Diabetes)</li>
-              </ul>
+
+              <li class="fw-300 margin-inline-start-400">Lipid Panel</li>
+              <li class="fw-300 margin-inline-start-400">Cholesterol</li>
+              <li class="fw-300 margin-inline-start-400">Heart Disease</li>
+              <li class="fw-300 margin-inline-start-400">
+                Blood Sugar (Diabetes)
+              </li>
+
               <li>and more...</li>
-              <li>1 Prevention and Planning</li>
+              <li>Prevention and Planning</li>
             </ul>
           </div>
         </div>
       </section>
-      <section class="review | bg-neutral-200">
-        <div class="container">
-          <div class="review-card">
-            <div class="review-card__bubble | bg-neutral-100">
+      <section class="review | bg-neutral-200 padding-block-800">
+        <div
+          class="wrapper | dp-grid grid-grow-two-columns gap-600 place-items-center"
+        >
+          <div class="bubble">
+            <div class="bubble__review | bg-neutral-100">
               <img
                 src="./assets/svg/quotation-marks.svg"
                 alt="quotation-marks"
               />
-              <blockquote class="fs-200 fw-400 lh-700">
+              <blockquote class="margin-block-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
                 libero amet! Ea error dignissimos quo, harum at, nisi reiciendis
                 quibusdam velit illum quos iste facilis culpa iure? Mollitia,
@@ -453,21 +478,21 @@
               </blockquote>
             </div>
 
-            <div class="review-name">
+            <div class="bubble__name">
               <span
-                class="circle | fs-200 fw-700 text-neutral-100 bg-primary-600"
+                class="circle | fs-400 fw-700 text-neutral-100 bg-primary-600 border-radius-full"
                 >AK</span
               >
-              <h5 class="fifth-heading fw-700 text-primary-600">Matt D.</h5>
+              <h4 class="fifth-heading fw-700 text-primary-600">Matt D.</h4>
             </div>
           </div>
-          <div class="review-card">
-            <div class="review-card__bubble | bg-neutral-100">
+          <div class="bubble">
+            <div class="bubble__review | bg-neutral-100">
               <img
                 src="./assets/svg/quotation-marks.svg"
                 alt="quotation-marks"
               />
-              <blockquote class="fs-200 fw-400 lh-700">
+              <blockquote class="margin-block-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
                 libero amet! Ea error dignissimos quo, harum at, nisi reiciendis
                 quibusdam velit illum quos iste facilis culpa iure? Mollitia,
@@ -475,21 +500,21 @@
               </blockquote>
             </div>
 
-            <div class="review-name">
+            <div class="bubble__name">
               <span
-                class="circle | fs-200 fw-700 text-neutral-100 bg-accent-400"
+                class="circle | fs-400 fw-700 text-neutral-100 bg-accent-400 border-radius-full"
                 >AK</span
               >
-              <h5 class="fifth-heading fw-700 text-accent-400">Andrew K.</h5>
+              <h4 class="fifth-heading fw-700 text-accent-400">Andrew K.</h4>
             </div>
           </div>
-          <div class="review-card">
-            <div class="review-card__bubble | bg-neutral-100">
+          <div class="bubble">
+            <div class="bubble__review | bg-neutral-100">
               <img
                 src="./assets/svg/quotation-marks.svg"
                 alt="quotation-marks"
               />
-              <blockquote class="fw-400 lh-700">
+              <blockquote class="margin-block-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
                 libero amet! Ea error dignissimos quo, harum at, nisi reiciendis
                 quibusdam velit illum quos iste facilis culpa iure? Mollitia,
@@ -497,33 +522,33 @@
               </blockquote>
             </div>
 
-            <div class="review-name">
+            <div class="bubble__name">
               <span
-                class="circle | fs-200 fw-700 text-neutral-100 bg-accent-300"
+                class="circle | fs-400 fw-700 text-neutral-100 bg-accent-300 border-radius-full"
                 >AK</span
               >
-              <h5 class="fifth-heading fw-700 text-accent-300">Lukas W.</h5>
+              <h4 class="fifth-heading fw-700 text-accent-300">Lukas W.</h4>
             </div>
           </div>
-          <div class="review-card">
-            <div class="review-card__bubble | bg-neutral-100">
+          <div class="bubble">
+            <div class="bubble__review | bg-neutral-100">
               <img
                 src="./assets/svg/quotation-marks.svg"
                 alt="quotation-marks"
               />
-              <blockquote class="fs-200 fw-400 lh-700">
+              <blockquote class="margin-block-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
                 libero amet! Ea error dignissimos quo, harum at, nisi reiciendis
                 quibusdam velit
               </blockquote>
             </div>
 
-            <div class="review-name">
+            <div class="bubble__name">
               <span
-                class="circle | fs-200 fw-700 text-neutral-100 bg-accent-500"
+                class="circle | fs-400 fw-700 text-neutral-100 bg-accent-500 border-radius-full"
                 >AK</span
               >
-              <h5 class="fifth-heading fw-700 text-accent-500">Shaun M.</h5>
+              <h4 class="fifth-heading fw-700 text-accent-500">Shaun M.</h4>
             </div>
           </div>
         </div>

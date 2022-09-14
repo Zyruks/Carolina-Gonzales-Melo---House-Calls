@@ -1,21 +1,4 @@
-@use "../abstract/" as *;
-
-.header {
-  inline-size: 100vw;
-  margin-block-start: rem(24);
-}
-
-.header .container {
-  display: flex;
-  inline-size: 100%;
-
-  justify-content: space-between;
-  padding-inline: rem(24);
-  block-size: rem(70);
-  max-inline-size: rem(1200);
-  margin-block: 0;
-  margin-inline: auto;
-}
+@use "../abstract" as *;
 
 .nav {
   position: absolute;
@@ -52,9 +35,4 @@
 
 .nav__item {
   position: relative;
-}
-
-.logo {
-  inline-size: rem(70);
-  block-size: 100%;
 }

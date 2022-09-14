@@ -1,9 +1,18 @@
 @use "../abstract/" as *;
 @use "sass:string";
 
-@each $fs, $value in $font-sizes {
-  .fs-#{$fs} {
-    font-size: $value;
+@each $size, $types in $font-sizes {
+  @each $type, $value in $types {
+    @if ($size == "fluid") {
+      .fluid-fs-#{$type} {
+        font-size: $value;
+      }
+    }
+    @if ($size == "classic") {
+      .fs-#{$type} {
+        font-size: $value;
+      }
+    }
   }
 }
 
@@ -25,41 +34,6 @@
   }
 }
 
-.primary-heading {
-  font-size: var(--primary-heading);
-  line-height: var(--lh-400);
-  font-weight: var(--fw-700);
-}
-
-.secondary-heading {
-  font-size: var(--secondary-heading);
-  line-height: var(--lh-500);
-  font-weight: var(--fw-700);
-}
-
-.third-heading {
-  font-size: var(--third-heading);
-  line-height: var(--lh-400);
-  font-weight: var(--fw-700);
-}
-
-.fifth-heading {
-  font-size: var(--fifth-heading);
-}
-
-.fs-body {
-  font-size: var(--fs-body);
-}
-
-.fs-btn {
-  font-size: var(--fs-btn);
-}
-
-.fs-additional-service-title {
-  font-size: var(--fs-700);
-  letter-spacing: rem(2);
-  text-transform: capitalize;
-  @include breakpoint(medium) {
-    font-size: var(--fs-600);
-  }
+.text-transform__uppercase {
+  text-transform: uppercase;
 }

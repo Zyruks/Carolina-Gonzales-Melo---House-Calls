@@ -10,6 +10,7 @@
     "stylelint-suitcss",
     "stylelint-use-logical-spec"
   ],
+
   "rules": {
     "color-no-invalid-hex": true,
     "font-family-no-duplicate-names": true,
@@ -78,7 +79,7 @@
     "selector-max-class": 2,
     "selector-max-compound-selectors": 3,
     "selector-max-id": 0,
-    "selector-max-pseudo-class": 2,
+    "selector-max-pseudo-class": 3,
     "selector-max-specificity": "0,3,0",
     "selector-max-type": 2,
     "selector-max-universal": 1,
@@ -116,7 +117,6 @@
     },
     "plugin/stylelint-group-selectors": true,
     "plugin/stylelint-selector-no-empty": true,
-    "suitcss/custom-property-no-outside-root": true,
     "suitcss/root-no-standard-properties": true,
     "suitcss/selector-root-no-composition": true,
     "liberty/use-logical-spec": "always"
