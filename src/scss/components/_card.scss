@@ -76,7 +76,7 @@ Card Component
     font-size: rem(24);
   }
 
-  & span:nth-child(3) {
+  :where(& span:nth-child(3)) {
     align-self: flex-end;
     justify-self: flex-start;
 

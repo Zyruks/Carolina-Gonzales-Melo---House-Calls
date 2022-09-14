@@ -254,7 +254,7 @@ $inverted-btn: (
   "border-color": var(--clr-primary-800),
   "text": var(--clr-neutral-100),
   "text-shadow": 0 rem(1) 0 var(--clr-primary-200),
-  "highlight": var(--clr-neutral-200),
+  "highlight": hsla(273, 53%, 37%, 25%),
 );
 
 $inverted-white-border-btn: (
