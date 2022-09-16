@@ -254,12 +254,13 @@ $custom-btn: (
 $inverted-btn: (
   "bg": rgba(0, 0, 0, 0),
   "border-color": var(--clr-primary-800),
-  "text": var(--clr-neutral-100),
+  "text": var(--clr-primary-800),
   "text-shadow": 0 rem(1) 0 var(--clr-primary-200),
   "highlight": hsla(273, 53%, 37%, 25%),
 );
 
 $inverted-white-border-btn: (
+  "text": var(--clr-neutral-100),
   "border-color": var(--clr-neutral-100),
   "highlight": hsla(20deg, 100%, 100%, 40%),
 );

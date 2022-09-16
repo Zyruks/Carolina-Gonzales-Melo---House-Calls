@@ -1,7 +1,7 @@
 const heroBtn = document.querySelector(".js-hero-btn");
 
 heroBtn.addEventListener("mouseenter", () => {
-  heroBtn.innerHTML = `<a href="tel:+18294261492" class=" text-neutral-100" >829 426-1492</a>`;
+  heroBtn.innerHTML = `829 426-1492`;
 });
 
 heroBtn.addEventListener("mouseleave", () => {
@@ -16,7 +16,7 @@ heroBtn.addEventListener("mouseleave", () => {
                   />
                 </svg>
 
-                <a href="tel:+18294261492" class="text-neutral-100">CALL US!</a>`;
+               CALL US!`;
 });
 
 heroBtn.addEventListener("focusout", () => {
@@ -31,5 +31,5 @@ heroBtn.addEventListener("focusout", () => {
                   />
                 </svg>
 
-                <a href="tel:+18294261492" class="text-neutral-100">CALL US!</a>`;
+                CALL US!`;
 });

@@ -1,7 +1,7 @@
 @use "../abstract" as *;
 @use "sass:map";
 
-:where(button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]),
+:where(.btn, button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]),
 :where(input[type="file"])::file-selector-button {
   --accent: #{map.get($buttons, "accent")};
   --text: #{map.get($buttons, "text")};
@@ -38,7 +38,7 @@
   }
 }
 
-:where(button, input[type="button"], input[type="submit"], input[type="reset"]),
+:where(.btn, button, input[type="button"], input[type="submit"], input[type="reset"]),
 :where(input[type="file"])::file-selector-button {
   display: inline-flex;
   gap: 1ch;
@@ -73,7 +73,7 @@
 }
 
 /* icons */
-:where(button, input[type="button"], input[type="submit"], input[type="reset"])
+:where(.btn, button, input[type="button"], input[type="submit"], input[type="reset"])
   > :where(svg, [data-icon]) {
   flex-shrink: 0;
 
@@ -88,17 +88,17 @@
 }
 
 /* focus */
-:where(button, input):where(:not(:active)):focus-visible {
+:where(.btn, button, input):where(:not(:active)):focus-visible {
   outline-offset: rem(5);
 }
 
 /* pressing */
-:where(button, input[type="button"], input[type="submit"], input[type="reset"]):where(:not(:active):hover) {
+:where(.btn, button, input[type="button"], input[type="submit"], input[type="reset"]):where(:not(:active):hover) {
   --highlight-size: #{rem(8)};
 }
 
 /* disabled */
-:where(button, input[type="button"], input[type="submit"], input[type="reset"])[disabled] {
+:where(.btn, button, input[type="button"], input[type="submit"], input[type="reset"])[disabled] {
   --bg: #{map.get($disable-btn, "bg")};
   --text: #{map.get($disable-btn, "text")};
 
@@ -108,7 +108,7 @@
 }
 
 /* adaptive  text */
-:where([type="submit"], form button:not([type], [disabled])) {
+:where(.btn, [type="submit"], form button:not([type], [disabled])) {
   --text: var(--accent);
 }
 
@@ -153,7 +153,7 @@
   text-transform: uppercase;
 }
 
-:where(button[data-state="inverted"]) {
+:where(.btn[data-state="inverted"], button[data-state="inverted"]) {
   --bg: #{map.get($inverted-btn, "bg")};
   --border-color: #{map.get($inverted-btn, "border-color")};
   --text: #{map.get($inverted-btn, "text")};
@@ -164,7 +164,7 @@
 :where(button[data-state="inverted-white-border"]) {
   --bg: #{map.get($inverted-btn, "bg")};
   --border-color: #{map.get($inverted-white-border-btn, "border-color")};
-  --text: #{map.get($inverted-btn, "text")};
+  --text: #{map.get($inverted-white-border-btn, "text")};
   --text-shadow: #{map.get($inverted-btn, "text-shadow")};
   --highlight: #{map.get($inverted-white-border-btn, "highlight")};
 }
