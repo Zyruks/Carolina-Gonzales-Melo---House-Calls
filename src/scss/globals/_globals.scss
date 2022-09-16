@@ -91,11 +91,30 @@ a:active {
 /* Change this later on */
 
 .logo {
+  filter: drop-shadow(rem(0) rem(0) rem(4) rgba(0, 0, 0, 15%));
+
+  transition: filter 300ms ease-in-out;
   block-size: rem(60);
   inline-size: rem(60);
+
+  &:hover {
+    filter: drop-shadow(rem(0) rem(0) rem(6) rgba(0, 0, 0, 40%));
+  }
 }
 
 .logo[data-place="footer"] {
   block-size: rem(100);
   inline-size: rem(100);
+}
+
+// .list-style-normal {
+
+//   list-style: circle;
+
+// }
+
+div[data-place="content-info"] {
+  ul {
+    list-style: disc;
+  }
 }

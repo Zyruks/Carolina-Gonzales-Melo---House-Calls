@@ -40,7 +40,7 @@ function imageCompiler() {
 }
 
 function faviconCompiler() {
-  return src("src/assets/**/favicon/*.{jpg,png,gif,webp,avif,heif,tiff,svg}")
+  return src("src/assets/**/favicons/*.{jpg,png,gif,webp,avif,heif,tiff,svg}")
     .pipe(newer("public/assets"))
     .pipe(
       responsive({

@@ -1,17 +1,5 @@
 @use "../abstract" as *;
 
-body {
-  font-family: var(--ff-primary);
-}
-
-h1 {
-  font-family: var(--ff-headings);
-}
-
-p {
-  font-family: var(--ff-body);
-}
-
 /***************** 
  header typography 
 *****************/
@@ -27,6 +15,17 @@ p {
   }
 }
 
+.nav {
+  font-size: var(--fluid-fs-600);
+  @include breakpoint(large) {
+    font-size: var(--fluid-fs-300);
+  }
+}
+
+/********************** 
+ header typography end
+**********************/
+
 .additional-services {
   font-size: var(--fluid-fs-600);
 
@@ -35,6 +34,20 @@ p {
   }
 }
 
-/********************** 
- header typography end
-**********************/
+footer {
+  font-size: var(--fluid-fs-600);
+
+  @include breakpoint(medium) {
+    font-size: var(--fluid-fs-400);
+  }
+
+  a {
+    color: var(--clr-neutral-100);
+
+    transition: all 350ms ease-in-out;
+
+    &:hover {
+      color: var(--clr-neutral-600);
+    }
+  }
+}

@@ -118,4 +118,20 @@
   @include breakpoint(large) {
     font-size: var(--fluid-fs-200);
   }
+
+  img {
+    transition: all 350ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.additional-services {
+  align-items: center;
+  justify-items: center;
+  @include breakpoint(large) {
+    justify-items: flex-start;
+  }
 }

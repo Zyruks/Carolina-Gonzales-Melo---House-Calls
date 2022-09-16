@@ -20,25 +20,25 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="favicons/favicon-16x16.png"
+      href="./assets/favicons/favicon-16x16.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="favicons/favicon-32x32.png"
+      href="./assets/favicons/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="48x48"
-      href="favicons/favicon-48x48.png"
+      href="./assets/favicons/favicon-48x48.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="228x228"
-      href="favicons/coast-228x228.png"
+      href="./assets/favicons/coast-228x228.png"
     />
 
     <!-- favicon responsive end-->
@@ -101,13 +101,10 @@
       <section class="wrapper margin-block-end-900 z-index-400">
         <div class="even-columns">
           <div>
-            <h1 class="margin-block-300">
-              Fast and reliable medic at your service
-            </h1>
+            <h1 class="margin-block-300">House Call with professionalism</h1>
             <p class="margin-block-start-100 margin-block-end-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eum
-              repellendus neque laborum, quaerat non provident veritatis
-              accusamus.
+              Dr. Carolina always at your service when you need it and where you
+              need it.
             </p>
             <div class="btn-container | dp-flex gap-600">
               <button class="btn js-hero-btn | fs-btn fw-400">
@@ -170,16 +167,23 @@
               <h3 class="third-heading fw-700 text-primary-800">
                 Places we work at
               </h3>
-              <ul class="text-neutral-900 margin-block-400">
-                <li>Sosua</li>
-                <li>Cabarete</li>
-                <li>Sea Horse Ranch</li>
-                <li>Ocean Village</li>
-                <li>Casa Linda</li>
-                <li>La Mulata</li>
-                <li>La Hispaniola</li>
-                <li>surroanding areas</li>
-              </ul>
+              <div
+                class="even-columns column-gap-800"
+                data-place="content-info"
+              >
+                <ul class="text-neutral-900 margin-block-400">
+                  <li>Sos&ugrave;a</li>
+                  <li>Cabarete</li>
+                  <li>Sea Horse Ranch</li>
+                  <li>Ocean Village</li>
+                </ul>
+                <ul class="text-neutral-900 margin-block-400">
+                  <li>Casa Linda</li>
+                  <li>La Mulata</li>
+                  <li>La Hispaniola</li>
+                  <li>& more</li>
+                </ul>
+              </div>
             </div>
             <div class="item-child">
               <img
@@ -230,12 +234,25 @@
       <!-- services -->
       <section class="services" id="services">
         <!-- primary services -->
-        <article
-          class="wrapper text-neutral-900 fluid-fs-500 text-transform__uppercase"
-        >
-          <h2 class="title | text-align-start">services</h2>
-          <div class="grid-grow | gap-600 text-align-center">
-            <div class="even-rows | gap-300">
+        <article class="wrapper text-neutral-900 fluid-fs-500">
+          <h2 class="title | text-align-start text-transform__uppercase">
+            services
+          </h2>
+          <div class="margin-block-800">
+            <p>
+              We offer<span class="fw-700 text-primary-800 fluid-fs-600">
+                House calls
+              </span>
+              for the low price of
+              <span class="fw-700 text-primary-800 fluid-fs-600">50 USD.</span>
+              We offer a variety of services with great quality and
+              responsibility.
+            </p>
+          </div>
+          <div
+            class="grid-grow | row-gap-800 column-gap-300 text-align-center text-transform__uppercase margin-block-800"
+          >
+            <div class="even-rows | row-gap-300">
               <img
                 class="grid-img"
                 src="./assets/svg/498-ambulance.svg"
@@ -246,7 +263,7 @@
                 & diagnosis
               </p>
             </div>
-            <div class="even-rows | gap-300">
+            <div class="even-rows | row-gap-300">
               <img
                 class="grid-img"
                 src="./assets/svg/blood.svg"
@@ -257,7 +274,7 @@
                 exam
               </p>
             </div>
-            <div class="even-rows | gap-300">
+            <div class="even-rows | row-gap-300">
               <img
                 class="grid-img"
                 src="./assets/svg/pulmonary.svg"
@@ -268,7 +285,7 @@
                 exam
               </p>
             </div>
-            <div class="even-rows | gap-300">
+            <div class="even-rows | row-gap-300">
               <img
                 class="grid-img"
                 src="./assets/svg/medicine.svg"
@@ -279,7 +296,7 @@
                 delivered
               </p>
             </div>
-            <div class="even-rows | gap-300">
+            <div class="even-rows | row-gap-300">
               <img
                 class="grid-img"
                 src="./assets/svg/glucose.svg"
@@ -427,7 +444,7 @@
         <div class="margin-block-800">
           <h3 class="text-align-center">Every plan Include</h3>
           <div
-            class="even-columns align-items-flex-start margin-block-300 text-primary-800"
+            class="even-columns align-items-flex-start margin-block-600 text-primary-800"
           >
             <ul>
               <li>Patient History <span class="fw-300">Review</span></li>
@@ -465,7 +482,7 @@
           </div>
         </div>
       </section>
-      <section class="review | bg-neutral-200 padding-block-800">
+      <section class="review | bg-neutral-200 padding-block-800" id="reviews">
         <div
           class="wrapper | dp-grid grid-grow-two-columns gap-600 place-items-center"
         >
@@ -560,28 +577,65 @@
       </section>
     </main>
     <!-- main end -->
-    <footer class="text-neutral-100 bg-neutral-900 fluid-fs-400">
+    <footer class="text-neutral-100 bg-neutral-900">
       <div class="wrapper | padding-block-600 three-columns">
-        <img
-          class="logo"
-          src="./assets/svg/logo.svg"
-          alt="Logotype"
-          data-place="footer"
-        />
+        <a href="/">
+          <img
+            class="logo"
+            src="./assets/svg/logo.svg"
+            alt="Logotype"
+            data-place="footer"
+          />
+        </a>
         <ul class="dp-grid gap-400">
-          <li><a href="#service">Services</a></li>
-          <li><a href="#">Plans</a></li>
-          <li><a href="#review">Reviews</a></li>
-          <li><a href="#">Contact</a></li>
+          <li>
+            <a
+              class="position-relative hover-state"
+              href="#services"
+              data-place="footer"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              class="position-relative hover-state"
+              data-place="footer"
+              href="#"
+              >Plans</a
+            >
+          </li>
+          <li>
+            <a
+              class="position-relative hover-state"
+              data-place="footer"
+              href="#reviews"
+              >Reviews</a
+            >
+          </li>
+          <li>
+            <a
+              class="position-relative hover-state"
+              data-place="footer"
+              href="#"
+              >Contact</a
+            >
+          </li>
         </ul>
         <div class="text-align-center">
           <p>Phone Number</p>
           <p class="fw-700">
-            <a href="tel:+18294261492">829 426-1492</a>
+            <a class="position-relative hover-state" href="tel:+18294261492"
+              >829 426-1492</a
+            >
           </p>
           <p class="margin-block-start-400">Email</p>
           <p class="fw-700">
-            <a href="mailto:carolina@gmail.com"></a> carolina@gmail.com
+            <a
+              class="position-relative hover-state"
+              href="mailto:carolina@gmail.com"
+            >
+              carolina@gmail.com
+            </a>
           </p>
         </div>
 
@@ -591,8 +645,14 @@
             <span class="fw-700">Samuel Llibre Santos </span>
           </p>
           <div class="dp-grid grid-50-50 margin-block-start-300">
-            <img src="./assets/svg/github-logo.svg" alt="" />
-            <img src="./assets/svg/linkedin.svg" alt="" />
+            <a href="https://github.com/Zyruks">
+              <img src="./assets/svg/github-logo.svg" alt="github logo" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/samuel-llibre-santos-290101229/"
+            >
+              <img src="./assets/svg/linkedin.svg" alt="linkedin logo" />
+            </a>
           </div>
         </div>
       </div>

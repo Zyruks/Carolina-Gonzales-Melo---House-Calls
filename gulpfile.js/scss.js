@@ -29,10 +29,13 @@ const customProperties = require("postcss-custom-properties");
 function scssCompilerDevelopment() {
   return src("src/scss/*.scss", { sourcemaps: true })
     .pipe(newerFiles("public/*.css"))
+
     .pipe(sass().on("error", sass.logError))
+
     .pipe(postcss([autoprefixer("last 2 versions")]))
     .pipe(postcss([opacity({ legacy: true })])) // Compatibility opacity older browser
     .pipe(size({ title: "scss", showFiles: true, pretty: true }))
+
     .pipe(dest("public/css", { sourcemaps: "." }));
 }
 
@@ -49,7 +52,13 @@ function scssCompilerDeployment() {
   return src("src/scss/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(postcss([autoprefixer("last 2 versions")]))
-    .pipe(purge({ content: ["src/**/*.html", "src/**/*.js"] }))
+    .pipe(
+      purge({
+        content: ["src/**/*.html", "src/**/*.js"],
+        variables: true,
+        safelist: [":where"],
+      })
+    )
     .pipe(postcss([cssnano({ preset: "cssnano-preset-default" })]))
     .pipe(dest("public/css"));
 }

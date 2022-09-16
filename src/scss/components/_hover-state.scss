@@ -33,3 +33,9 @@
     }
   }
 }
+
+.hover-state[data-place="footer"] {
+  &::after {
+    inset-inline-start: 0%;
+  }
+}
