@@ -148,6 +148,8 @@
   --text: #{map.get($custom-btn, "text")};
   --text-shadow: #{map.get($custom-btn, "text-shadow")};
   --highlight: #{map.get($custom-btn, "highlight")};
+  --shadow-1: #{map.get($custom-btn, "shadow-1")};
+  --shadow-2: #{map.get($custom-btn, "shadow-2")};
   text-transform: uppercase;
 }
 
@@ -164,7 +166,7 @@
   --border-color: #{map.get($inverted-white-border-btn, "border-color")};
   --text: #{map.get($inverted-btn, "text")};
   --text-shadow: #{map.get($inverted-btn, "text-shadow")};
-  --highlight: #{map.get($inverted-btn, "highlight")};
+  --highlight: #{map.get($inverted-white-border-btn, "highlight")};
 }
 
 :where(button[data-state="invisible"]) {

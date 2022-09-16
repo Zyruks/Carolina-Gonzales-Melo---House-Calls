@@ -69,12 +69,16 @@ blockquote {
 }
 
 ul {
+  margin: 0;
   padding: 0;
 
   list-style: none;
 
   li {
     margin-block: var(--space-300);
+
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -89,4 +93,9 @@ a:active {
 .logo {
   block-size: rem(60);
   inline-size: rem(60);
+}
+
+.logo[data-place="footer"] {
+  block-size: rem(100);
+  inline-size: rem(100);
 }

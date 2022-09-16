@@ -63,13 +63,15 @@
     <!-- #header section -->
     <header class="wrapper | margin-block-start-600">
       <div class="dp-flex justify-space-between">
-        <img src="./assets/svg/sonography.svg" alt="logo" class="logo" />
+        <a href="/">
+          <img src="./assets/svg/logo.svg" alt="logo" class="logo" />
+        </a>
         <!-- #primary nav menu -->
 
         <nav class="nav js-nav | z-index-500">
-          <a href="#" class="nav__item hover-state">service</a>
-          <a href="#" class="nav__item hover-state">plans</a>
-          <a href="#" class="nav__item hover-state">about</a>
+          <a href="#services" class="nav__item hover-state">services</a>
+          <a href="#plans" class="nav__item hover-state">plans</a>
+          <a href="#reviews" class="nav__item hover-state">reviews</a>
           <a href="#" class="nav__item hover-state">contact</a>
           <button class="nav__item | fw-700" data-state="emergency">
             emergency
@@ -95,7 +97,7 @@
     <!-- #header section end -->
 
     <!-- main  -->
-    <main class="margin-block-600">
+    <main class="margin-block-start-600">
       <section class="wrapper margin-block-end-900 z-index-400">
         <div class="even-columns">
           <div>
@@ -123,9 +125,7 @@
                 <a href="tel:+18294261492" class="text-neutral-100">CALL US!</a>
               </button>
               <button data-state="inverted">
-                <a href="#services" class="text-primary-800 fw-700">
-                  SERVICES</a
-                >
+                <a href="#services" class="fw-700"> SERVICES</a>
               </button>
             </div>
           </div>
@@ -140,20 +140,15 @@
           class="content-info__item | wave wave-1 | bg-primary-800 position-relative"
         >
           <div class="wrapper even-columns | gap-500">
-            <div class="item-child | margin-block-start-800">
+            <div class="item-child | margin-block-start-800 z-index-400">
               <h3 class="text-neutral-100">Know your Doctor</h3>
               <p class="padding-block-400">
-                doctor gonzalez melo be your first-call! A house call diagnosis
-                with comprehensive management of next steps (if required) with
-                preferential appointments at a bespoke team of specialists( if
-                required ) and priority (reduced waiting room) .
+                You can give all your trust to
+                <span class="fw-700">Dr. Carolina </span>, she is qualified to
+                attend to all your medical needs from the comfort of your home.
+                You will have all the attention and information without leaving
+                home
               </p>
-              <button
-                class="border-neutral-100 margin-block-start-400 position-relative z-index-400"
-                data-state="inverted-white-border"
-              >
-                Learn More
-              </button>
             </div>
             <div class="item-child invert-items">
               <img
@@ -173,14 +168,18 @@
           <div class="wrapper even-columns">
             <div class="item-child">
               <h3 class="third-heading fw-700 text-primary-800">
-                Don’t wait, we go to your place
+                Places we work at
               </h3>
-              <p class="text-neutral-600 padding-block-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                eleifend suscipit elementum. Curabitur ut purus in risus
-                fermentum sollicitudin.
-              </p>
-              <button class="margin-block-start-400">Learn More</button>
+              <ul class="text-neutral-900 margin-block-400">
+                <li>Sosua</li>
+                <li>Cabarete</li>
+                <li>Sea Horse Ranch</li>
+                <li>Ocean Village</li>
+                <li>Casa Linda</li>
+                <li>La Mulata</li>
+                <li>La Hispaniola</li>
+                <li>surroanding areas</li>
+              </ul>
             </div>
             <div class="item-child">
               <img
@@ -199,7 +198,9 @@
         <div
           class="content-info__item | wave wave-2 | text-neutral-100 bg-primary-800 position-relative padding-block-900"
         >
-          <div class="wrapper even-columns | padding-block-800 gap-500">
+          <div
+            class="wrapper even-columns | padding-block-800 gap-500 z-index-400"
+          >
             <div class="item-child">
               <h3 class="text-neutral-100">We do care</h3>
               <p class="padding-block-400">
@@ -559,6 +560,43 @@
       </section>
     </main>
     <!-- main end -->
+    <footer class="text-neutral-100 bg-neutral-900 fluid-fs-400">
+      <div class="wrapper | padding-block-600 three-columns">
+        <img
+          class="logo"
+          src="./assets/svg/logo.svg"
+          alt="Logotype"
+          data-place="footer"
+        />
+        <ul class="dp-grid gap-400">
+          <li><a href="#service">Services</a></li>
+          <li><a href="#">Plans</a></li>
+          <li><a href="#review">Reviews</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="text-align-center">
+          <p>Phone Number</p>
+          <p class="fw-700">
+            <a href="tel:+18294261492">829 426-1492</a>
+          </p>
+          <p class="margin-block-start-400">Email</p>
+          <p class="fw-700">
+            <a href="mailto:carolina@gmail.com"></a> carolina@gmail.com
+          </p>
+        </div>
+
+        <div class="attribution">
+          <p class="text-align-center">
+            Design & Develop By <br />
+            <span class="fw-700">Samuel Llibre Santos </span>
+          </p>
+          <div class="dp-grid grid-50-50 margin-block-start-300">
+            <img src="./assets/svg/github-logo.svg" alt="" />
+            <img src="./assets/svg/linkedin.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="./scripts/script.js"></script>
   </body>

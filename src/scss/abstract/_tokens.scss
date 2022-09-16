@@ -247,6 +247,8 @@ $custom-btn: (
   "text": hsl(228deg, 89%, 100%),
   "text-shadow": 0 rem(1) 0 rgb(200, 55, 55),
   "highlight": rgba(250, 92, 92, 0.2),
+  "shadow-1": rgb(245, 77, 77),
+  "shadow-2": 0 rem(3) rem(5) rem(-2) rgb(245, 77, 77),
 );
 
 $inverted-btn: (
@@ -259,6 +261,7 @@ $inverted-btn: (
 
 $inverted-white-border-btn: (
   "border-color": var(--clr-neutral-100),
+  "highlight": hsla(20deg, 100%, 100%, 40%),
 );
 
 /* buttons end */
