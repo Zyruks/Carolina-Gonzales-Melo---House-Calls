@@ -116,7 +116,16 @@ a:active {
 // }
 
 div[data-place="content-info"] {
+  justify-content: flex-start;
+
   ul {
+    font-size: var(--fluid-fs-500);
+
     list-style: disc;
+    min-inline-size: rem(130);
+
+    @include breakpoint(medium) {
+      font-size: var(--fluid-fs-400);
+    }
   }
 }
