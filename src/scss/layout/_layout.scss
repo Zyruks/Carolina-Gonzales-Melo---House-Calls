@@ -111,12 +111,14 @@
 }
 
 .attribution {
-  font-size: var(--fluid-fs-400);
+  font-size: var(--fs-400);
   @include breakpoint(medium) {
     grid-column: 2 / 3;
   }
   @include breakpoint(large) {
-    font-size: var(--fluid-fs-200);
+    grid-row: rem(200);
+
+    font-size: var(--fs-300);
   }
 
   img {
@@ -131,7 +133,14 @@
 .additional-services {
   align-items: center;
   justify-items: center;
-  @include breakpoint(large) {
+  @include breakpoint(medium) {
     justify-items: flex-start;
+  }
+}
+
+.item-child[data-place="content-info"] {
+  margin-block-start: var(--space-800);
+  @include breakpoint(medium) {
+    margin-block-start: 0;
   }
 }
