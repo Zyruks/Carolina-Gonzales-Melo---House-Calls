@@ -63,10 +63,10 @@
     inset-block-end: -1%;
     block-size: 100%;
     @include breakpoint(medium) {
-      inset-block-end: -2%;
+      inset-block-end: -5%;
     }
     @include breakpoint(x-large) {
-      inset-block-end: -2%;
+      inset-block-end: -8%;
     }
   }
 }
