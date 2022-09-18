@@ -5,9 +5,10 @@
 
   display: grid;
   gap: rem(30);
+  min-block-size: rem(375);
 
   &:nth-child(even) {
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       transform: translateY(rem(80));
     }
   }
@@ -84,7 +85,7 @@
 .bubble__name {
   display: flex;
   gap: rem(16);
-  align-items: center;
+  align-items: flex-start;
   padding-inline-start: rem(14);
 
   .circle {

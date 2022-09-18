@@ -53,7 +53,11 @@
 
   font-weight: #{map.get($buttons, "font-weight")};
 
-  font-size: #{map.get($buttons, "font-size")};
+  font-size: #{map.get($buttons, "mobile-font-size")};
+
+  @include breakpoint(medium) {
+    font-size: #{map.get($buttons, "font-size")};
+  }
   text-align: center;
   text-shadow: var(--text-shadow);
 
@@ -142,7 +146,7 @@
 
 /* Custom Button */
 
-:where(button[data-state="emergency"]) {
+:where(.btn[data-state="emergency"], button[data-state="emergency"]) {
   --bg: #{map.get($custom-btn, "bg")};
   --border-color: #{map.get($custom-btn, "border-color")};
   --text: #{map.get($custom-btn, "text")};
