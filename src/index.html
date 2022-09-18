@@ -72,10 +72,14 @@
           <a href="#services" class="nav__item hover-state">services</a>
           <a href="#plans" class="nav__item hover-state">plans</a>
           <a href="#reviews" class="nav__item hover-state">reviews</a>
-          <a href="#" class="nav__item hover-state">contact</a>
-          <button class="nav__item | fw-700" data-state="emergency">
+          <!-- <a href="#" class="nav__item hover-state">contact</a> -->
+          <a
+            href="tel:829-426-1492"
+            class="nav__item btn | fw-700"
+            data-state="emergency"
+          >
             emergency
-          </button>
+          </a>
         </nav>
         <!-- #primary nav menu end-->
 
@@ -140,7 +144,7 @@
           class="content-info__item | wave wave-1 | bg-primary-800 position-relative"
         >
           <div class="wrapper even-columns | gap-500">
-            <div class="item-child | margin-block-start-800 z-index-400">
+            <div class="item-child | z-index-400" data-place="content-info">
               <h3 class="text-neutral-100">Know your Doctor</h3>
               <p class="padding-block-400">
                 You can give all your trust to
@@ -175,7 +179,7 @@
                 data-place="content-info"
               >
                 <ul class="text-neutral-900 margin-block-400">
-                  <li>Sos&ugrave;a</li>
+                  <li>Sos&uacute;a</li>
                   <li>Cabarete</li>
                   <li>Sea Horse Ranch</li>
                   <li>Ocean Village</li>
@@ -209,22 +213,17 @@
             class="wrapper even-columns | padding-block-800 gap-500 z-index-400"
           >
             <div class="item-child">
-              <h3 class="text-neutral-100">We do care</h3>
+              <h3 class="text-neutral-100">Concierge Care</h3>
               <p class="padding-block-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                eleifend suscipit elementum. Curabitur ut purus in risus
-                fermentum sollicitudin. Donec quis mattis nulla
+                Patients can use our concierge service if they want to have Dr.
+                Carolina Gonzales as their regular personal doctor. People who
+                purchase an annual plan may then be confident they will receive
+                excellent, individualized medical care, when and when they need
+                it.
               </p>
-              <button
-                class="margin-block-start-400 position-relative z-index-400"
-                data-state="inverted-white-border"
-              >
-                Learn More
-              </button>
             </div>
             <div class="item-child invert-items">
               <img
-                data-value="heart"
                 src="./assets/svg/heart.svg"
                 alt="heart illustration"
                 class="content-info__img"
@@ -379,8 +378,9 @@
         <!-- additional services end -->
       </section>
       <!-- services end -->
+      <!--  plan section  -->
       <section class="wrapper | fw-700 margin-block-900">
-        <h2 class="title">Plans</h2>
+        <h2 class="title" id="plans">Plans</h2>
         <div class="grid-grow | gap-800 margin-block-900">
           <div class="card">
             <div class="card__title">
@@ -485,9 +485,13 @@
           </div>
         </div>
       </section>
-      <section class="review | bg-neutral-200 padding-block-800" id="reviews">
+      <!--  plan section end -->
+      <section
+        class="review | bg-neutral-200 padding-block-900 text-neutral-700"
+        id="reviews"
+      >
         <div
-          class="wrapper | dp-grid grid-grow-two-columns gap-600 place-items-center"
+          class="wrapper | dp-grid grid-grow-two-columns gap-600 place-items-center padding-block-400"
         >
           <div class="bubble">
             <div class="bubble__review | bg-neutral-100">
@@ -496,17 +500,15 @@
                 alt="quotation-marks"
               />
               <blockquote class="margin-block-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-                libero amet! Ea error dignissimos quo, harum at, nisi reiciendis
-                quibusdam velit illum quos iste facilis culpa iure? Mollitia,
-                quo quibusdam
+                She is always on time and super knowledgeable. If you have any
+                question just call her,you wont regret it.
               </blockquote>
             </div>
 
             <div class="bubble__name">
               <span
                 class="circle | fs-400 fw-700 text-neutral-100 bg-primary-600 border-radius-full"
-                >AK</span
+                >MD</span
               >
               <h4 class="fifth-heading fw-700 text-primary-600">Matt D.</h4>
             </div>
@@ -518,19 +520,17 @@
                 alt="quotation-marks"
               />
               <blockquote class="margin-block-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-                libero amet! Ea error dignissimos quo, harum at, nisi reiciendis
-                quibusdam velit illum quos iste facilis culpa iure? Mollitia,
-                quo quibusdam
+                This is definitely the Dr to call! When a friend gave me the
+                number i wasn't sure but i wouldn't call anyone else now.
               </blockquote>
             </div>
 
             <div class="bubble__name">
               <span
                 class="circle | fs-400 fw-700 text-neutral-100 bg-accent-400 border-radius-full"
-                >AK</span
+                >BK</span
               >
-              <h4 class="fifth-heading fw-700 text-accent-400">Andrew K.</h4>
+              <h4 class="fifth-heading fw-700 text-accent-400">Bryan K.</h4>
             </div>
           </div>
           <div class="bubble">
@@ -540,19 +540,17 @@
                 alt="quotation-marks"
               />
               <blockquote class="margin-block-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-                libero amet! Ea error dignissimos quo, harum at, nisi reiciendis
-                quibusdam velit illum quos iste facilis culpa iure? Mollitia,
-                quo quibusdam
+                Don't get fooled by her young appearance, she is very smart and
+                explains everything so well!
               </blockquote>
             </div>
 
             <div class="bubble__name">
               <span
                 class="circle | fs-400 fw-700 text-neutral-100 bg-accent-300 border-radius-full"
-                >AK</span
+                >MB</span
               >
-              <h4 class="fifth-heading fw-700 text-accent-300">Lukas W.</h4>
+              <h4 class="fifth-heading fw-700 text-accent-300">Maxine B.</h4>
             </div>
           </div>
           <div class="bubble">
@@ -562,18 +560,17 @@
                 alt="quotation-marks"
               />
               <blockquote class="margin-block-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-                libero amet! Ea error dignissimos quo, harum at, nisi reiciendis
-                quibusdam velit
+                Add her to your phone list and believe me you won't regret it!
+                Best Dr. I've had.
               </blockquote>
             </div>
 
             <div class="bubble__name">
               <span
                 class="circle | fs-400 fw-700 text-neutral-100 bg-accent-500 border-radius-full"
-                >AK</span
+                >BV</span
               >
-              <h4 class="fifth-heading fw-700 text-accent-500">Shaun M.</h4>
+              <h4 class="fifth-heading fw-700 text-accent-500">Bojana V.</h4>
             </div>
           </div>
         </div>
@@ -603,7 +600,7 @@
             <a
               class="position-relative hover-state"
               data-place="footer"
-              href="#"
+              href="#plans"
               >Plans</a
             >
           </li>
@@ -613,14 +610,6 @@
               data-place="footer"
               href="#reviews"
               >Reviews</a
-            >
-          </li>
-          <li>
-            <a
-              class="position-relative hover-state"
-              data-place="footer"
-              href="#"
-              >Contact</a
             >
           </li>
         </ul>
