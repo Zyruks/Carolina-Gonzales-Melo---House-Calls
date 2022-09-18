@@ -206,7 +206,8 @@ $breakpoints-max: (
 
 $buttons: (
   //  The font size and weight only control the [type="file"] if you need to change the font-size and font-weight use utility classes on parent element.
-  "font-size": var(--fs-400),
+  "mobile-font-size": var(--fluid-fs-400),
+  "font-size": var(--fluid-fs-300),
   "font-weight": var(--fw-700),
   "accent": var(--clr-accent-700),
   "text": var(--clr-neutral-100),
