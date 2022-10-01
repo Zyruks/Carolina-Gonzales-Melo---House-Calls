@@ -8,11 +8,11 @@ const newer = require("gulp-newer");
  * @returns The SVG files are being minified and then sent to the public/assets folder.
  */
 function compilesvg() {
-  return src("src/assets/**/*.svg")
+  return src("src/assets/svg/**/*.svg")
     .pipe(newer("public/assets"))
     .pipe(svgMinify())
     .pipe(size({ title: "SVG", showFiles: true, pretty: true }))
-    .pipe(dest("public/assets/"));
+    .pipe(dest("public/assets/svg/"));
 }
 
 exports.svgTask = compilesvg;

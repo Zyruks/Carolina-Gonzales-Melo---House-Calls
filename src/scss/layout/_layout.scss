@@ -30,8 +30,11 @@
 }
 
 .grid-img {
-  max-block-size: rem(100);
-  max-inline-size: rem(100);
+  max-inline-size: rem(250);
+
+  @include breakpoint(medium) {
+    max-inline-size: rem(175);
+  }
 }
 
 .justify-space-between {
@@ -52,7 +55,11 @@
 }
 
 .grid-30-60 {
-  grid-template-columns: 0.3fr 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  img {
+    max-inline-size: rem(150);
+  }
 }
 
 .grid-50-50 {
@@ -133,7 +140,8 @@
 .additional-services {
   align-items: center;
   justify-items: center;
-  @include breakpoint(medium) {
+
+  @include breakpoint(large) {
     justify-items: flex-start;
   }
 }
@@ -142,5 +150,23 @@
   margin-block-start: var(--space-800);
   @include breakpoint(medium) {
     margin-block-start: 0;
+  }
+}
+
+div[data-place="plans"] {
+  li {
+    min-inline-size: rem(150);
+  }
+}
+
+.services__items {
+  p {
+    align-self: flex-start;
+
+    font-size: var(--fluid-fs-800);
+
+    @include breakpoint(medium) {
+      font-size: var(--fluid-fs-500);
+    }
   }
 }

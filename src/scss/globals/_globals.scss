@@ -35,11 +35,11 @@ h1 {
 }
 
 h2 {
+  font-size: var(--fluid-fs-800);
   letter-spacing: var(--letter-spacing-tight);
 
   border-block-end: rem(3) dashed var(--clr-primary-300);
   inline-size: 100%;
-
   margin-block: var(--space-600);
   padding-block-end: var(--space-400);
   @include breakpoint(medium) {

@@ -11,32 +11,25 @@ const newer = require("gulp-newer");
  * @returns A function that will be called by the gulp task runner.
  */
 function imageCompiler() {
-  return src([
-    "src/assets/images/**/*.{jpg,png,gif,webp,avif,heif,tiff,}",
-    "!src/assets/favicon/*.{jpg,png,gif,webp,avif,heif,tiff,svg}", //exclude favicon
-  ])
-    .pipe(newer("public/assets/images/"))
-    .pipe(
-      responsive({
-        formats: [
-          {
-            width: (metadata) => Math.trunc(metadata.width * 1),
-            //  rename: { suffix: "-og" },
-            format: "jpeg",
-            jpegOptions: { quality: 90, progressive: true },
-          },
-
-          {
-            width: (metadata) => Math.trunc(metadata.width * 1),
-            format: "webp",
-            //  rename: { suffix: "-lg" },
-            webpOptions: { quality: 90, progressive: true },
-          },
-        ],
-      })
-    )
-    .pipe(size({ title: "images", showFiles: true, pretty: true }))
-    .pipe(dest("public/assets/images"));
+  return (
+    src([
+      "src/assets/**/**/*.{jpg,png,gif,webp,avif,heif,tiff,}",
+      "!src/assets/favicons/*.{jpg,png,gif,webp,avif,heif,tiff,svg}", //exclude favicon
+    ])
+      .pipe(newer("public/assets/"))
+      // .pipe(
+      //   responsive({
+      //     formats: [
+      //       {
+      //         width: (metadata) => Math.trunc(metadata.width * 1),
+      //         //  rename: { suffix: "-og" },
+      //       },
+      //     ],
+      //   })
+      // )
+      .pipe(size({ title: "images", showFiles: true, pretty: true }))
+      .pipe(dest("public/assets/"))
+  );
 }
 
 function faviconCompiler() {
