@@ -1,7 +1,7 @@
 "use strict";
 
 /* This is importing the required modules. */
-const { src, dest } = require("gulp");
+const { src, dest, series } = require("gulp");
 const htmlMinifier = require("gulp-htmlmin");
 
 const size = require("gulp-size");
@@ -40,4 +40,15 @@ function htmlCompileDeployment() {
     .pipe(dest("public"));
 }
 
-exports.htmlDeployment = htmlCompileDeployment;
+function xmlCompileDeployment() {
+  return src("src/**/*.xml").pipe(dest("public"));
+}
+function txtCompileDeployment() {
+  return src("src/**/*.txt").pipe(dest("public"));
+}
+
+exports.htmlDeployment = series(
+  htmlCompileDeployment,
+  xmlCompileDeployment,
+  txtCompileDeployment
+);
