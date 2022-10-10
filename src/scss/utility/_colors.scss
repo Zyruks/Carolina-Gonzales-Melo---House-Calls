@@ -16,7 +16,7 @@
     @each $shade, $value in $shades {
       @if ($position == "") {
         .border-#{$color}-#{$shade} {
-          border-#{$position}: rem(5) solid var(--clr-#{$color}-#{$shade});
+          border#{$position}: rem(5) solid var(--clr-#{$color}-#{$shade});
         }
       } @else {
         .border-#{$position}-#{$color}-#{$shade} {
