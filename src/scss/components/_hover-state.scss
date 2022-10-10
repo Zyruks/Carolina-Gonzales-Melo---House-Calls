@@ -37,5 +37,16 @@
 .hover-state[data-place="footer"] {
   &::after {
     inset-inline-start: 0%;
+
+    border-block-end: rem(2) solid var(--clr-neutral-100);
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::after {
+      inline-size: 100%;
+
+      opacity: 100%;
+    }
   }
 }

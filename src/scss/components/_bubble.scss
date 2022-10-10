@@ -5,7 +5,7 @@
 
   display: grid;
   gap: rem(30);
-  min-block-size: rem(375);
+  min-block-size: rem(250);
 
   &:nth-child(even) {
     @include breakpoint(medium) {
