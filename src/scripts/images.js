@@ -3,6 +3,8 @@ const additionalServicesImg = document.querySelectorAll(
   ".js-additional-services-img"
 );
 
+const servicesSection = document.querySelector(".js-services");
+
 let images = [];
 /**
  * It takes a list of image URLs as arguments, and then creates new Image objects, and sets their src
@@ -16,18 +18,26 @@ function preload() {
 }
 
 //-- usage --//
-preload(
-  "./assets/images/services/ambulance.webp",
-  "./assets/images/services/heart.webp",
-  "./assets/images/services/lungs.webp",
-  "./assets/images/services/capsules.webp",
-  "./assets/images/services/glucometer.webp",
-  "./assets/images/services/aditional-services/blood-test.webp",
-  "./assets/images/services/aditional-services/chemotherapy.webp",
-  "./assets/images/services/aditional-services/fetus.webp",
-  "./assets/images/services/aditional-services/wound.webp",
-  "./assets/images/services/aditional-services/tube.webp",
-  "./assets/images/services/aditional-services/kidney.webp"
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    setTimeout(() => {
+      preload(
+        "./assets/images/services/ambulance.webp",
+        "./assets/images/services/heart.webp",
+        "./assets/images/services/lungs.webp",
+        "./assets/images/services/capsules.webp",
+        "./assets/images/services/glucometer.webp",
+        "./assets/images/services/aditional-services/blood-test.webp",
+        "./assets/images/services/aditional-services/chemotherapy.webp",
+        "./assets/images/services/aditional-services/fetus.webp",
+        "./assets/images/services/aditional-services/wound.webp",
+        "./assets/images/services/aditional-services/tube.webp",
+        "./assets/images/services/aditional-services/kidney.webp"
+      );
+    }, 5000);
+  },
+  false
 );
 
 /**
