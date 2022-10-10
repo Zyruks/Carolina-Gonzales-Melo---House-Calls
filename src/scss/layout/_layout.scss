@@ -123,8 +123,6 @@
     grid-column: 2 / 3;
   }
   @include breakpoint(large) {
-    grid-row: rem(200);
-
     font-size: var(--fs-300);
   }
 
